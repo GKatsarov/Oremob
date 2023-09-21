@@ -18,7 +18,7 @@
     "src": "frontend/entrypoints/customers.js"
   },
   "frontend/entrypoints/theme.css": {
-    "file": "theme.d646a6e2.min.css",
+    "file": "theme.dc8668e8.min.css",
     "isEntry": true,
     "src": "frontend/entrypoints/theme.css"
   },

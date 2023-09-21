@@ -80,3 +80,7 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+
+h2{
+  font-family: 'ABCGravity Normal' !important;
+}
