@@ -31,12 +31,11 @@
 
     {% render 'meta-tags' %}
 
-    {{ 'fonts.css' | asset_url | stylesheet_tag }}
 
     {%- liquid
-      assign body_font_bold = 'ABCGravity Normal' | font_modify: 'weight', 'bold'
-      assign body_font_italic = 'ABCGravity Normal' | font_modify: 'style', 'italic'
-      assign body_font_bold_italic = 'ABCGravity Normal' | font_modify: 'style', 'italic'
+      assign body_font_bold = 'ABCGravity-Normal-Trial' | font_modify: 'weight', 'bold'
+      assign body_font_italic = 'ABCGravity-Normal-Trial' | font_modify: 'style', 'italic'
+      assign body_font_bold_italic = 'ABCGravity-Normal-Trial' | font_modify: 'style', 'italic'
     %}
 
     {% style %}
@@ -47,11 +46,12 @@
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
-        --font-body-family: 'ABCGravity Normal', {{ settings.type_body_font.fallback_families }};
+        --font-body-family: 'ABCGravity-Normal-Trial', {{ settings.type_body_font.fallback_families }};
         --font-body-weight: {{ settings.type_body_font.weight }};
+        --font-body-background-color: {{ settings.colors_primary }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
-        --font-heading-family: 'ABCGravity Normal', {{ settings.type_header_font.fallback_families }};
+        --font-heading-family: 'ABCGravity-Normal-Trial', {{ settings.type_header_font.fallback_families }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
 
         --color-primary: {{ settings.colors_primary.red }} {{ settings.colors_primary.green }} {{ settings.colors_primary.blue }};

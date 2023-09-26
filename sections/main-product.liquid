@@ -156,7 +156,7 @@
                           <div class="relative">
                             <select
                               id="Option-{{ section.id }}-{{ forloop.index0 }}"
-                              class="block w-full appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+                              class="block w-full appearance-none rounded border border-white bg-white bg-none py-3 px-4"
                               name="options[{{ option.name | escape }}]"
                               form="{{ product_form_id }}"
                             >
@@ -194,7 +194,7 @@
                       <select
                         name="id"
                         id="Variants-{{ section.id }}"
-                        class="block w-full appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+                        class="block w-full appearance-none rounded border border-white bg-white bg-none py-3 px-4"
                         form="{{ product_form_id }}"
                       >
                         {%- for variant in product.variants -%}

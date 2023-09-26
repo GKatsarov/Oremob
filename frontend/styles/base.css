@@ -26,6 +26,8 @@
 
 body {
   @apply border-primary/10 bg-contrast text-primary/90 antialiased;
+  background-color: var(--font-body-background-color);
+  color: var(--color-contrast);
 }
 
 html {
@@ -80,7 +82,6 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
-
-h2{
-  font-family: 'ABCGravity Normal' !important;
+input{
+  background-color: white;
 }

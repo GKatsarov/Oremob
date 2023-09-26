@@ -25,7 +25,7 @@
             {{- 'templates.contact.form.name' | t -}}
           </label>
           <input
-            class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+            class="appearance-none rounded border border-white bg-none py-3 px-4"
             autocomplete="name"
             type="text"
             id="ContactForm-name"
@@ -42,7 +42,7 @@
             autocomplete="email"
             type="email"
             id="ContactForm-email"
-            class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+            class="appearance-none rounded border border-white bg-none py-3 px-4"
             name="contact[email]"
             spellcheck="false"
             autocapitalize="off"
@@ -71,7 +71,7 @@
         <input
           type="tel"
           id="ContactForm-phone"
-          class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+          class="appearance-none rounded border border-white bg-none py-3 px-4"
           autocomplete="tel"
           name="contact[{{ 'templates.contact.form.phone' | t }}]"
           pattern="[0-9\-]*"
@@ -82,14 +82,14 @@
         <label class="" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
         <textarea
           id="ContactForm-body"
-          class="min-h-[100px] appearance-none rounded border border-white bg-primary bg-transparent bg-none text-primary"
+          class="min-h-[100px] appearance-none rounded border border-white bg-primary bg-none text-primary"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
         >
           {{- form.body -}}
         </textarea>
       </div>
       <div class="">
-        <button type="submit" class="button mt-10 w-full bg-primary text-contrast">
+        <button type="submit" class="button mt-10 w-full bg-white text-contrast">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>

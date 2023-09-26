@@ -36,3 +36,13 @@
 .swimlane {
   @apply grid w-full snap-x snap-mandatory scroll-px-6 grid-flow-col justify-start gap-4 overflow-x-scroll px-6 pb-4;
 }
+
+[type='radio']:checked {
+  background-size: 0 0;
+}
+
+/* CSS */
+
+.radio-selected .radio-circle {
+  background-color: #00ff00; /* Change to your selected color */
+}

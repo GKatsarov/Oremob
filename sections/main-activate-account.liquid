@@ -42,7 +42,7 @@
         type="password"
         name="customer[password]"
         id="password"
-        class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+        class="appearance-none rounded border border-white bg-white bg-none py-3 px-4"
         autocomplete="new-password"
         {% if form.errors contains 'password' %}
           aria-invalid="true"
@@ -68,7 +68,7 @@
         type="password"
         name="customer[password_confirmation]"
         id="password_confirmation"
-        class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+        class="appearance-none rounded border border-white bg-white bg-none py-3 px-4"
         autocomplete="new-password"
         {% if form.errors contains 'password' %}
           aria-invalid="true"
@@ -86,7 +86,7 @@
       {%- endif -%}
     </div>
 
-    <button class="button mt-10 w-full bg-primary text-contrast">
+    <button class="button mt-10 w-full bg-white text-contrast">
       {{ 'customer.activate_account.submit' | t }}
     </button>
     <button name="decline" class="button mt-4 w-full border border-primary/10 bg-contrast text-primary">

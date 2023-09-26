@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./frontend/**/*.js', './**/*.liquid'],
+  content: ['./frontend/**/*.js', './**/*.liquid',"./node_modules/flowbite/**/*.js"],
   theme: {
     extend: {
       colors: {
@@ -10,6 +10,7 @@ module.exports = {
         contrast: 'rgba(var(--color-contrast) / <alpha-value>)',
         notice: 'rgba(var(--color-accent) / <alpha-value>)',
         shopPay: 'var(--color-shop-pay)',
+        customGreen: '#BEFF3D'
       },
       screens: {
         sm: '32em',
@@ -66,6 +67,7 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    require('flowbite/plugin'),
     plugin(({ addVariant }) => {
       addVariant('no-js', '.no-js &')
     }),

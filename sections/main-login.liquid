@@ -18,7 +18,7 @@
           value=""
           name="email"
           id="RecoverEmail"
-          class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+          class="appearance-none rounded border border-white bg-white bg-none py-3 px-4"
           autocorrect="off"
           autocapitalize="off"
           autocomplete="email"
@@ -41,7 +41,7 @@
         </p>
       {%- endif -%}
 
-      <button class="button mt-10 w-full bg-primary text-contrast">
+      <button class="button mt-10 w-full bg-white text-contrast">
         {{ 'customer.login_page.submit' | t }}
       </button>
 
@@ -79,7 +79,7 @@
           type="email"
           name="customer[email]"
           id="CustomerEmail"
-          class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+          class="appearance-none rounded border border-white bg-white bg-none py-3 px-4"
           autocomplete="email"
           autocorrect="off"
           autocapitalize="off"
@@ -99,7 +99,7 @@
             value=""
             name="customer[password]"
             id="CustomerPassword"
-            class="appearance-none rounded border border-white bg-transparent bg-none py-3 px-4"
+            class="appearance-none rounded border border-white bg-white bg-none py-3 px-4"
             autocomplete="current-password"
             {% if form.errors contains 'form' %}
               aria-invalid="true"
@@ -112,7 +112,7 @@
         </a>
       {%- endif -%}
 
-      <button class="button mt-10 w-full bg-primary text-contrast">
+      <button class="button mt-10 w-full bg-white text-contrast">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
@@ -128,7 +128,7 @@
       <h2 class="mt-10 w-full max-w-md text-4xl">{{ 'customer.login_page.guest_title' | t }}</h2>
 
       {%- form 'guest_login' -%}
-        <button class="button mt-10 w-full bg-primary text-contrast">
+        <button class="button mt-10 w-full bg-white text-contrast">
           {{ 'customer.login_page.guest_continue' | t }}
         </button>
       {%- endform -%}
