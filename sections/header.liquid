@@ -4,7 +4,7 @@
 -%}
 
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} client:idle>
-  <header role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 lg:py-8">
+  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 lg:py-8">
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-start">
       <a href="{{ routes.root_url }}" class="flex items-center">

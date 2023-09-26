@@ -1,14 +1,23 @@
-<div class="grid w-full justify-items-start gap-8 p-6 py-8 md:p-8 lg:p-12">
-  <h1 class="inline-block max-w-prose-narrow font-heading text-heading font-heading-weight">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <p class="max-w-prose-narrow text-copy">
+<style type="text/css">
+  .template-404 .title + * {
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .template-404 .title + * {
+      margin-top: 2rem;
+    }
+  }
+</style>
+
+<div class="template-404 page-width page-margin center">
+  <p>
     {{ 'templates.404.subtext' | t }}
   </p>
-  <a
-    href="{{ routes.all_products_collection_url }}"
-    class="button w-auto border border-primary/10 bg-contrast text-primary"
-  >
+  <h1 class="title">
+    {{ 'templates.404.title' | t }}
+  </h1>
+  <a href="{{ routes.all_products_collection_url }}" class="button">
     {{ 'general.continue_shopping' | t }}
   </a>
 </div>
