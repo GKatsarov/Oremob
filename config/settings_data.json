@@ -1,6 +1,7 @@
 {
   "current": {
     "colors_primary": "#e1e3e5",
+    "colors_accent": "#beff3d",
     "sections": {
       "header": {
         "type": "header",
