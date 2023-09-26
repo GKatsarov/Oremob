@@ -8,13 +8,13 @@
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-start">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'logo.png' | asset_url }}" class="h-8 mr-3" alt="Flowbite Logo" />
+        <img src="{{ 'logo.png' | asset_url }}" class="h-8 mr-3" />
       </a>
     </div>
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-4">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'shop.png' | asset_url }}" class="h-14 md:h-20 xl:h-24" alt="Flowbite Logo" />
+        <img src="{{ 'shop.png' | asset_url }}" class="h-14 md:h-20 xl:h-24" />
       </a>
     </div>
 
@@ -30,7 +30,7 @@
       </button>
 
       <!-- Dropdown menu -->
-      <div id="dropdownDefaultRadio" class="z-10 hidden w-32 bg-black divide-y divide-gray-100 rounded-lg shadow">
+      <div id="dropdownDefaultRadio" class="z-10 hidden bg-black divide-y divide-gray-100 rounded-lg shadow">
         <ul class="p-3 space-y-3 text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
           {%- for link in section.settings.menu.links -%}
             {% assign linkUrl = link.url %}
