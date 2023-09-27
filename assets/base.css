@@ -209,7 +209,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .visually-hidden {
@@ -3294,7 +3294,7 @@ details-disclosure > details {
   }
 
   .scroll-trigger.animate--slide-in {
-    transform: translateY(2rem);
+    /*transform: translateY(2rem);*/
   }
 
   .scroll-trigger:not(.scroll-trigger--offscreen).animate--fade-in {

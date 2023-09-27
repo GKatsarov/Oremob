@@ -54,6 +54,7 @@
   width: 100%;
 }
 
+
 @media screen and (max-width: 749px) {
   .footer__content-bottom {
     flex-wrap: wrap;
