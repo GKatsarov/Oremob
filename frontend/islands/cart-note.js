@@ -15,4 +15,6 @@ class CartNote extends window.HTMLElement {
   }
 }
 
-window.customElements.define('cart-note', CartNote)
+if (window.customElements.get('cart-note') === undefined) {
+  window.customElements.define('cart-note', CartNote)
+}

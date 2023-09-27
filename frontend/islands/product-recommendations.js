@@ -17,4 +17,9 @@ class ProductRecommendations extends window.HTMLElement {
   }
 }
 
-window.customElements.define('product-recommendations', ProductRecommendations)
+if (window.customElements.get('product-recommendations') === undefined) {
+  window.customElements.define(
+    'product-recommendations',
+    ProductRecommendations
+  )
+}

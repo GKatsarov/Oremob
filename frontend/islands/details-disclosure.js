@@ -36,4 +36,6 @@ export default class DetailsDisclosure extends window.HTMLElement {
   }
 }
 
-window.customElements.define('details-disclosure', DetailsDisclosure)
+if (window.customElements.get('details-disclosure') === undefined) {
+  window.customElements.define('details-disclosure', DetailsDisclosure)
+}

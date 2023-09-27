@@ -79,4 +79,6 @@ class ProductForm extends window.HTMLElement {
   }
 }
 
-window.customElements.define('product-form', ProductForm)
+if (window.customElements.get('product-form') === undefined) {
+  window.customElements.define('product-form', ProductForm)
+}

@@ -42,4 +42,6 @@ class HeaderDrawer extends DetailsModal {
   }
 }
 
-window.customElements.define('header-drawer', HeaderDrawer)
+if (window.customElements.get('header-drawer') === undefined) {
+  window.customElements.define('header-drawer', HeaderDrawer)
+}

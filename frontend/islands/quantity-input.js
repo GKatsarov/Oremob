@@ -19,4 +19,6 @@ class QuantityInput extends window.HTMLElement {
   }
 }
 
-window.customElements.define('quantity-input', QuantityInput)
+if (window.customElements.get('quantity-input') === undefined) {
+  window.customElements.define('quantity-input', QuantityInput)
+}

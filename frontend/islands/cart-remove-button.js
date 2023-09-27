@@ -10,4 +10,6 @@ class CartRemoveButton extends window.HTMLElement {
   }
 }
 
-window.customElements.define('cart-remove-button', CartRemoveButton)
+if (window.customElements.get('cart-remove-button') === undefined) {
+  window.customElements.define('cart-remove-button', CartRemoveButton)
+}

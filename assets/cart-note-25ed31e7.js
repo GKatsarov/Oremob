@@ -1,0 +1,1 @@
+import{f as n}from"./utils-3b9fa9c2.js";class o extends window.HTMLElement{constructor(){super(),this.addEventListener("change",t=>{t.stopPropagation();const e=JSON.stringify({note:t.target.value});fetch(`${window.routes.cart_update_url}`,{...n(),body:e})})}}window.customElements.get("cart-note")===void 0&&window.customElements.define("cart-note",o);

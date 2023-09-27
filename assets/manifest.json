@@ -18,7 +18,7 @@
     "src": "frontend/entrypoints/customers.js"
   },
   "frontend/entrypoints/theme.css": {
-    "file": "theme-22eff431.css",
+    "file": "theme-e06ec205.css",
     "isEntry": true,
     "src": "frontend/entrypoints/theme.css"
   },
@@ -41,7 +41,7 @@
       "frontend/islands/variant-radios.js",
       "frontend/islands/variant-selects.js"
     ],
-    "file": "theme-a6f69db2.js",
+    "file": "theme-2a29b034.js",
     "imports": [
       "_modulepreload-polyfill-fcabaeeb.js"
     ],
@@ -49,7 +49,7 @@
     "src": "frontend/entrypoints/theme.js"
   },
   "frontend/islands/cart-drawer-items.js": {
-    "file": "cart-drawer-items-17f6669e.js",
+    "file": "cart-drawer-items-23f0a23d.js",
     "imports": [
       "frontend/islands/cart-items.js",
       "_utils-3b9fa9c2.js",
@@ -60,7 +60,7 @@
     "src": "frontend/islands/cart-drawer-items.js"
   },
   "frontend/islands/cart-drawer.js": {
-    "file": "cart-drawer-1375636b.js",
+    "file": "cart-drawer-d421da18.js",
     "imports": [
       "frontend/entrypoints/theme.js",
       "_modulepreload-polyfill-fcabaeeb.js"
@@ -69,7 +69,7 @@
     "src": "frontend/islands/cart-drawer.js"
   },
   "frontend/islands/cart-items.js": {
-    "file": "cart-items-082d85e1.js",
+    "file": "cart-items-0dead647.js",
     "imports": [
       "_utils-3b9fa9c2.js",
       "frontend/entrypoints/theme.js",
@@ -79,7 +79,7 @@
     "src": "frontend/islands/cart-items.js"
   },
   "frontend/islands/cart-note.js": {
-    "file": "cart-note-4014e637.js",
+    "file": "cart-note-25ed31e7.js",
     "imports": [
       "_utils-3b9fa9c2.js"
     ],
@@ -87,17 +87,17 @@
     "src": "frontend/islands/cart-note.js"
   },
   "frontend/islands/cart-remove-button.js": {
-    "file": "cart-remove-button-22b29667.js",
+    "file": "cart-remove-button-6dda56b4.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/cart-remove-button.js"
   },
   "frontend/islands/details-disclosure.js": {
-    "file": "details-disclosure-828d11cd.js",
+    "file": "details-disclosure-cd0d6859.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/details-disclosure.js"
   },
   "frontend/islands/details-modal.js": {
-    "file": "details-modal-0b4c4cae.js",
+    "file": "details-modal-5ddee426.js",
     "imports": [
       "frontend/entrypoints/theme.js",
       "_modulepreload-polyfill-fcabaeeb.js"
@@ -106,7 +106,7 @@
     "src": "frontend/islands/details-modal.js"
   },
   "frontend/islands/header-drawer.js": {
-    "file": "header-drawer-32173524.js",
+    "file": "header-drawer-7c64d94a.js",
     "imports": [
       "frontend/entrypoints/theme.js",
       "frontend/islands/details-modal.js",
@@ -116,12 +116,12 @@
     "src": "frontend/islands/header-drawer.js"
   },
   "frontend/islands/localization-form.js": {
-    "file": "localization-form-4e79aa6c.js",
+    "file": "localization-form-0a66c9aa.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/localization-form.js"
   },
   "frontend/islands/password-modal.js": {
-    "file": "password-modal-f6bb41ad.js",
+    "file": "password-modal-03e2d03c.js",
     "imports": [
       "frontend/islands/details-modal.js",
       "frontend/entrypoints/theme.js",
@@ -131,7 +131,7 @@
     "src": "frontend/islands/password-modal.js"
   },
   "frontend/islands/product-form.js": {
-    "file": "product-form-579765b8.js",
+    "file": "product-form-691d99f1.js",
     "imports": [
       "_utils-3b9fa9c2.js"
     ],
@@ -139,22 +139,22 @@
     "src": "frontend/islands/product-form.js"
   },
   "frontend/islands/product-recommendations.js": {
-    "file": "product-recommendations-fc726c93.js",
+    "file": "product-recommendations-d308337f.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/product-recommendations.js"
   },
   "frontend/islands/quantity-input.js": {
-    "file": "quantity-input-07f900c9.js",
+    "file": "quantity-input-898a8162.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/quantity-input.js"
   },
   "frontend/islands/sticky-header.js": {
-    "file": "sticky-header-4f3be1c9.js",
+    "file": "sticky-header-e149683b.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/sticky-header.js"
   },
   "frontend/islands/variant-radios.js": {
-    "file": "variant-radios-38becf30.js",
+    "file": "variant-radios-6deff043.js",
     "imports": [
       "frontend/islands/variant-selects.js"
     ],
@@ -162,7 +162,7 @@
     "src": "frontend/islands/variant-radios.js"
   },
   "frontend/islands/variant-selects.js": {
-    "file": "variant-selects-a9f52811.js",
+    "file": "variant-selects-2e775eef.js",
     "isDynamicEntry": true,
     "src": "frontend/islands/variant-selects.js"
   },

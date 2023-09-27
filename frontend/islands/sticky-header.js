@@ -76,4 +76,6 @@ class StickyHeader extends window.HTMLElement {
   }
 }
 
-window.customElements.define('sticky-header', StickyHeader)
+if (window.customElements.get('sticky-header') === undefined) {
+  window.customElements.define('sticky-header', StickyHeader)
+}

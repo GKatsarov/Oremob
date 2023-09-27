@@ -9,4 +9,6 @@ class PasswordModal extends DetailsModal {
   }
 }
 
-window.customElements.define('password-modal', PasswordModal)
+if (window.customElements.get('password-modal') === undefined) {
+  window.customElements.define('password-modal', PasswordModal)
+}

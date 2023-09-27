@@ -1,0 +1,1 @@
+import r from"./variant-selects-2e775eef.js";class s extends r{updateOptions(){const e=Array.from(this.querySelectorAll("fieldset"));this.options=e.map(t=>Array.from(t.querySelectorAll("input")).find(i=>i.checked).value)}}window.customElements.get("variant-radios")===void 0&&window.customElements.define("variant-radios",s);

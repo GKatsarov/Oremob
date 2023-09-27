@@ -8,7 +8,7 @@
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-start">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'logo.png' | asset_url }}" class="h-8 mr-3" />
+        <img src="{{ 'logo.png' | asset_url }}" class="h-14 mr-3" />
       </a>
     </div>
 
@@ -20,13 +20,23 @@
 
     <div class="flex items-center justify-end w-full gap-4 lg:gap-1 lg:w-auto">
 
-      <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="group rounded-md px-2 py-1.5 text-center inline-flex items-center bg-black" type="button">
+      <a href="{{ routes.cart_url }}" class="relative flex items-center justify-center mr-2 size" id="cart-icon-bubble">
+        {{ 'templates.cart.cart' | t | upcase }} ( {{ cart.item_count }} )
+      </a>
+
+      <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="group rounded-md px-2 pt-2 pb-1.5 text-center inline-flex items-center bg-black" type="button">
+        {%- assign hasCurrentLink = false -%}
         {%- for link in section.settings.menu.links -%}
           {%- if link.current -%}
+            {%- assign hasCurrentLink = true -%}
             <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
-            <label for="default-radio-current" class="cursor-pointer ml-1 text-lg font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
+            <label for="default-radio-current" class="cursor-pointer ml-1 text-2xl font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
           {%- endif -%}
         {%- endfor -%}
+        {%- if hasCurrentLink == false -%}
+          <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
+          <label for="default-radio-current" class="cursor-pointer ml-1 text-2xl font-medium group-hover:text-customGreen text-white">{{ section.settings.menu.links[0].title }}</label>
+        {%- endif -%}
       </button>
 
       <!-- Dropdown menu -->

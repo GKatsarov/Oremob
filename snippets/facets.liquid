@@ -45,11 +45,6 @@
               class="facets__wrapper"
             {% endif %}
           >
-            {%- if filter_type == 'horizontal' and results.filters != empty -%}
-              <h2 class="facets__heading caption-large text-body" id="verticalTitle" tabindex="-1">
-                {{ 'products.facets.filter_by_label' | t }}
-              </h2>
-            {%- endif -%}
             {% comment %} Pills are right below the title for filter type vertical {% endcomment %}
             {%- if filter_type == 'vertical' -%}
               <div class="active-facets active-facets-desktop">
@@ -127,15 +122,17 @@
                       aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
                       <div>
+                        <div style="top:-2px;" class="inline-block w-4 h-4 border-2 rounded-full border-black relative mr-2">
+                          <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300"></span>
+                        </div>
                         <span>
-                          {{- filter.label | escape }}
+                          {{- filter.label | escape | upcase }}
                           {%- if filter_type == 'vertical' -%}
                             <span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}">
                               ({{ filter.active_values.size }})</span
                             >
                           {%- endif -%}
                         </span>
-                        {% render 'icon-caret' %}
                       </div>
                     </summary>
                     <div
@@ -167,6 +164,7 @@
                                 class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}"
                               >
                                 <input
+                                  class="hidden"
                                   type="checkbox"
                                   name="{{ value.param_name }}"
                                   value="{{ value.value }}"
@@ -231,6 +229,7 @@
                                 class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}"
                               >
                                 <input
+                                  class="hidden"
                                   type="checkbox"
                                   name="{{ value.param_name }}"
                                   value="{{ value.value }}"

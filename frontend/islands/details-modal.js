@@ -58,4 +58,6 @@ export default class DetailsModal extends window.HTMLElement {
   }
 }
 
-window.customElements.define('details-modal', DetailsModal)
+if (window.customElements.get('details-modal') === undefined) {
+  window.customElements.define('details-modal', DetailsModal)
+}

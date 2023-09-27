@@ -101,4 +101,6 @@ class CartDrawer extends window.HTMLElement {
   }
 }
 
-window.customElements.define('cart-drawer', CartDrawer)
+if (window.customElements.get('cart-drawer') === undefined) {
+  window.customElements.define('cart-drawer', CartDrawer)
+}

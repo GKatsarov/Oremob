@@ -11,4 +11,6 @@ class VariantRadios extends VariantSelects {
   }
 }
 
-window.customElements.define('variant-radios', VariantRadios)
+if (window.customElements.get('variant-radios') === undefined) {
+  window.customElements.define('variant-radios', VariantRadios)
+}

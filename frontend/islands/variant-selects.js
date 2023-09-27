@@ -139,4 +139,6 @@ export default class VariantSelects extends window.HTMLElement {
   }
 }
 
-window.customElements.define('variant-selects', VariantSelects)
+if (window.customElements.get('variant-selects') === undefined) {
+  window.customElements.define('variant-selects', VariantSelects)
+}

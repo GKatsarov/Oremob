@@ -188,4 +188,6 @@ export default class CartItems extends window.HTMLElement {
   }
 }
 
-window.customElements.define('cart-items', CartItems)
+if (window.customElements.get('cart-items') === undefined) {
+  window.customElements.define('cart-items', CartItems)
+}

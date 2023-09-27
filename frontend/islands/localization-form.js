@@ -90,4 +90,6 @@ class LocalizationForm extends window.HTMLElement {
   }
 }
 
-window.customElements.define('localization-form', LocalizationForm)
+if (window.customElements.get('localization-form') === undefined) {
+  window.customElements.define('localization-form', LocalizationForm)
+}
