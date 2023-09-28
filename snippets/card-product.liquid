@@ -99,6 +99,21 @@
                 >
               {%- endif -%}
             </div>
+              {%- if card_product.available == false -%}
+                  {%- assign soldOutCross = card_product.metafields.custom.cross_sold_out -%}
+                  {%- assign comingSoon = card_product.metafields.custom.coming_soon -%}
+                  <img
+                          style="width: 100%;opacity: 1;{% if soldOutCross == true %}height:100%;{% else %}top: 25%;height: 50%;{% endif %}"
+                          src="
+                            {%- if soldOutCross == true -%}{{ 'sold-out-cross.png' | asset_url }}
+                            {%- elsif comingSoon == true -%}{{ 'coming-soon.png' | asset_url }}
+                            {%- else -%}{{ 'sold-out.png' | asset_url }}{%- endif -%}"
+                          alt=""
+                          class="motion-reduce relative"
+                          loading="lazy"
+                          width="368"
+                          height="194">
+              {%- endif -%}
           </div>
         {%- endif -%}
         <div class="card__content">
@@ -120,14 +135,7 @@
             </h3>
           </div>
           <div class="card__badge {{ settings.badge_position }}">
-            {%- if card_product.available == false -%}
-              <span
-                id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
-                class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-              >
-                {{- 'products.product.sold_out' | t -}}
-              </span>
-            {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+            {%- if card_product.compare_at_price > card_product.price and card_product.available -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
                 class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"

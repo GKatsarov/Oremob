@@ -128,6 +128,7 @@
         "unit_price": "Egységár"
       },
       "share": "A termék megosztása",
+      "coming_soon":"Coming Soon",
       "sold_out": "Elfogyott",
       "unavailable": "Nincs készleten",
       "vendor": "Forgalmazó",

@@ -77,18 +77,29 @@
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
-            class="product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
+            class="group product-form__submit button button--full-width {% if show_dynamic_checkout %}button--secondary{% else %}button--primary{% endif %}"
             {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
               disabled
             {% endif %}
           >
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                {{ 'products.product.sold_out' | t }}
+                {% if product.metafields.custom.coming_soon == true %}
+                  {{ 'products.product.coming_soon' | t }}
+                {% else %}
+                  {{ 'products.product.sold_out' | t }}
+                {% endif %}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
             </span>
+
+            {%- if product.selected_or_first_available_variant.available -%}
+            <div class="absolute w-full invisible group-hover:visible group-hover:transition-opacity">
+              <img src="{{ 'add-to-cart-button.png' | asset_url }}" alt="" class="motion-reduce relative w-full" loading="lazy" width="212" height="60">
+            </div>
+            {% endif %}
+
             <div class="loading-overlay__spinner hidden">
               <svg
                 aria-hidden="true"
@@ -116,7 +127,11 @@
           class="product-form__submit button button--full-width button--primary"
           disabled
         >
-          {{ 'products.product.sold_out' | t }}
+          {% if product.metafields.custom.coming_soon == true %}
+            {{ 'products.product.coming_soon' | t }}
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
         </button>
       </div>
     </div>

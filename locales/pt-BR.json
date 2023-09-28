@@ -128,7 +128,8 @@
         "unit_price": "Preço unitário"
       },
       "share": "Compartilhar o produto",
-      "sold_out": "Esgotado",
+      "coming_soon":"Coming Soon",
+"sold_out": "Esgotado",
       "unavailable": "Indisponível",
       "vendor": "Fornecedor",
       "video_exit_message": "{{ title }} abre um vídeo em tela cheia na mesma janela.",

@@ -127,7 +127,8 @@
         "unit_price": "Enhetspris"
       },
       "share": "Del dette produktet",
-      "sold_out": "Utsolgt",
+      "coming_soon":"Coming Soon",
+"sold_out": "Utsolgt",
       "unavailable": "Utilgjengelig",
       "vendor": "Selger",
       "video_exit_message": "{{ title }} åpner en fullskjermvideo i det samme vinduet.",

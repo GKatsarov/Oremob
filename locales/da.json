@@ -127,7 +127,8 @@
         "unit_price": "Stykpris"
       },
       "share": "Del dette produkt",
-      "sold_out": "Udsolgt",
+      "coming_soon":"Coming Soon",
+"sold_out": "Udsolgt",
       "unavailable": "Ikke tilgængelig",
       "vendor": "Forhandler",
       "video_exit_message": "{{ title }} åbner video i fuld skærm i samme vindue.",

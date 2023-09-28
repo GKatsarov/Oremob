@@ -127,7 +127,8 @@
         "unit_price": "Eenheidsprijs"
       },
       "share": "Dit product delen",
-      "sold_out": "Uitverkocht",
+      "coming_soon":"Coming Soon",
+"sold_out": "Uitverkocht",
       "unavailable": "Niet beschikbaar",
       "vendor": "Verkoper",
       "video_exit_message": "{{ title }} opent een video op volledig scherm in hetzelfde venster.",

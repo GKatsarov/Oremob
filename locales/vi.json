@@ -128,7 +128,8 @@
         "unit_price": "Đơn giá"
       },
       "share": "Chia sẻ sản phẩm này",
-      "sold_out": "Đã bán hết",
+      "coming_soon":"Coming Soon",
+"sold_out": "Đã bán hết",
       "unavailable": "Không có sẵn",
       "vendor": "Nhà cung cấp",
       "video_exit_message": "{{ title }} mở video toàn màn hình ở cùng một cửa sổ.",

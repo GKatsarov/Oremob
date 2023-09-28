@@ -127,7 +127,8 @@
         "unit_price": "Birim fiyat"
       },
       "share": "Bu ürünü paylaş",
-      "sold_out": "Tükendi",
+      "coming_soon":"Coming Soon",
+"sold_out": "Tükendi",
       "unavailable": "Kullanım dışı",
       "vendor": "Satıcı",
       "video_exit_message": "{{ title }} aynı pencerede tam ekran video açar.",

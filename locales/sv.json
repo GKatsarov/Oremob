@@ -127,7 +127,8 @@
         "unit_price": "Enhetspris"
       },
       "share": "Dela den här produkten",
-      "sold_out": "Slutsåld",
+      "coming_soon":"Coming Soon",
+"sold_out": "Slutsåld",
       "unavailable": "Ej tillgänglig",
       "vendor": "Säljare",
       "video_exit_message": "{{ title }} öppnar helskärmsvideo i samma fönster.",

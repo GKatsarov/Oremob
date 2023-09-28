@@ -128,7 +128,8 @@
         "unit_price": "単価"
       },
       "share": "この商品を共有する",
-      "sold_out": "売り切れ",
+      "coming_soon":"Coming Soon",
+"sold_out": "売り切れ",
       "unavailable": "利用できません",
       "vendor": "販売元",
       "video_exit_message": "{{ title }}は同じウィンドウの全画面表示ビデオで開きます。",

@@ -4,7 +4,7 @@
 -%}
 
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} client:idle>
-  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 lg:py-8">
+  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 py-8 text-lg sm:text-xl lg:text-2xl">
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-start">
       <a href="{{ routes.root_url }}" class="flex items-center">
@@ -30,12 +30,12 @@
           {%- if link.current -%}
             {%- assign hasCurrentLink = true -%}
             <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
-            <label for="default-radio-current" class="cursor-pointer ml-1 text-2xl font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
+            <label for="default-radio-current" class="cursor-pointer ml-1 font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
           {%- endif -%}
         {%- endfor -%}
         {%- if hasCurrentLink == false -%}
           <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
-          <label for="default-radio-current" class="cursor-pointer ml-1 text-2xl font-medium group-hover:text-customGreen text-white">{{ section.settings.menu.links[0].title }}</label>
+          <label for="default-radio-current" class="cursor-pointer ml-1 font-medium group-hover:text-customGreen text-white">{{ section.settings.menu.links[0].title }}</label>
         {%- endif -%}
       </button>
 
