@@ -325,6 +325,11 @@
   visibility: visible;
 }
 
+.facet-checkbox > input[type='checkbox']:checked ~ svg > circle {
+  fill: #BEFF3D;
+  stroke: #BEFF3D;
+}
+
 @media screen and (forced-colors: active) {
   .facet-checkbox > svg {
     background-color: inherit;

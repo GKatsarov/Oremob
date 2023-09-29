@@ -165,6 +165,13 @@ cart-remove-button .icon-remove {
     padding-top: 4.5rem;
     bottom: auto;
   }
+
+  tbody:before {
+    content: "@";
+    display: block;
+    line-height: 10px;
+    text-indent: -99999px;
+  }
 }
 
 .cart-item .loading-overlay:not(.hidden)~* {
@@ -207,6 +214,8 @@ cart-remove-button .icon-remove {
 
 .cart-items thead th {
   text-transform: uppercase;
+  padding: 2rem;
+  background: white;
 }
 
 @media screen and (max-width: 749px) {
@@ -222,14 +231,16 @@ cart-remove-button .icon-remove {
     display: flex;
     justify-content: space-between;
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.2);
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
+    background: white;
   }
 
   .cart-item {
     display: grid;
     grid-template: repeat(2, auto) / repeat(4, 1fr);
     gap: 1.5rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
+    background: white;
   }
 
   .cart-item:last-child {
@@ -257,6 +268,9 @@ cart-remove-button .icon-remove {
     align-items: flex-start;
     justify-content: flex-end;
   }
+  .cart-items td {
+    padding: 2rem 1rem;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -282,11 +296,12 @@ cart-remove-button .icon-remove {
 
   .cart-items td {
     vertical-align: top;
-    padding-top: 4rem;
+    padding: 3rem 2rem;
   }
 
   .cart-item {
     display: table-row;
+    background: white;
   }
 
   .cart-item>td+td {
