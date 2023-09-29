@@ -117,8 +117,10 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
-    "checkout_logo_position": "left",
+    "checkout_logo_position": "center",
     "checkout_logo_size": "medium",
+    "checkout_body_background_color": "#dfe0df",
+    "checkout_sidebar_background_color": "#ffffff",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
