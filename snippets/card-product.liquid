@@ -105,9 +105,9 @@
                   <img
                           style="width: 100%;opacity: 1;{% if soldOutCross == true %}height:100%;{% else %}top: 25%;height: 50%;{% endif %}"
                           src="
-                            {%- if soldOutCross == true -%}{{ 'sold-out-cross.png' | asset_url }}
-                            {%- elsif comingSoon == true -%}{{ 'coming-soon.png' | asset_url }}
-                            {%- else -%}{{ 'sold-out.png' | asset_url }}{%- endif -%}"
+                            {%- if soldOutCross == true -%}{{ 'sold-out-cross.svg' | asset_url }}
+                            {%- elsif comingSoon == true -%}{{ 'coming-soon.svg' | asset_url }}
+                            {%- else -%}{{ 'sold-out.svg' | asset_url }}{%- endif -%}"
                           alt=""
                           class="motion-reduce relative"
                           loading="lazy"
