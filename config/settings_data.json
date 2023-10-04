@@ -122,7 +122,7 @@
     "checkout_body_background_color": "#dfe0df",
     "checkout_sidebar_background_color": "#dfe0df",
     "checkout_accent_color": "#beff3d",
-    "checkout_button_color": "#ffffff",
+    "checkout_button_color": "#121212",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
