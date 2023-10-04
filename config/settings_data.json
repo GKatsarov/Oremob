@@ -121,6 +121,7 @@
     "checkout_logo_size": "medium",
     "checkout_body_background_color": "#dfe0df",
     "checkout_sidebar_background_color": "#dfe0df",
+    "checkout_body_font": "Oswald",
     "checkout_accent_color": "#beff3d",
     "checkout_button_color": "#121212",
     "sections": {
