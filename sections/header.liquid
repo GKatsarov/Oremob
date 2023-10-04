@@ -25,18 +25,14 @@
       </a>
 
       <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="group rounded-md px-2 pt-2 pb-1.5 text-center inline-flex items-center bg-black" type="button">
-        {%- assign hasCurrentLink = false -%}
         {%- for link in section.settings.menu.links -%}
           {%- if link.current -%}
-            {%- assign hasCurrentLink = true -%}
             <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
             <label for="default-radio-current" class="cursor-pointer ml-1 font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
           {%- endif -%}
         {%- endfor -%}
-        {%- if hasCurrentLink == false -%}
           <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
           <label for="default-radio-current" class="cursor-pointer ml-1 font-medium group-hover:text-customGreen text-white">{{ section.settings.menu.links[0].title }}</label>
-        {%- endif -%}
       </button>
 
       <!-- Dropdown menu -->
