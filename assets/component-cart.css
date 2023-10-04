@@ -193,7 +193,13 @@ cart-items {
 .cart__checkout-button {
   max-width: 36rem;
 }
+.cart__checkout-button:hover{
+  background-color: #BEFF3D;
+}
 
+.cart-item .global-media-settings{
+  background: white;
+}
 .cart__ctas {
   text-align: center;
 }

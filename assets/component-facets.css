@@ -241,12 +241,12 @@
 }
 
 .facets__display {
-  border-width: var(--popup-border-width);
-  border-style: solid;
-  border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+  /*border-width: var(--popup-border-width);*/
+  /*border-style: solid;*/
+  /*border-color: rgba(var(--color-foreground), var(--popup-border-opacity));*/
   border-radius: var(--popup-corner-radius);
-  box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
-    rgba(var(--color-shadow), var(--popup-shadow-opacity));
+  /*box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)*/
+  /*  rgba(var(--color-shadow), var(--popup-shadow-opacity));*/
   background-color: rgb(var(--color-background));
   position: absolute;
   top: calc(100% + 0.5rem);

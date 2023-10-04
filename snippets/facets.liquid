@@ -139,18 +139,6 @@
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
                       class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
                     >
-                      {%- if filter_type != 'vertical' -%}
-                        <div class="facets__header">
-                          <span class="facets__selected no-js-hidden">
-                            {{- 'products.facets.filters_selected' | t: count: filter.active_values.size -}}
-                          </span>
-                          <facet-remove>
-                            <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link">
-                              {{ 'products.facets.reset' | t }}
-                            </a>
-                          </facet-remove>
-                        </div>
-                      {%- endif -%}
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                         <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                         <ul
@@ -179,7 +167,7 @@
 
                                 <svg
                                   width="1.6rem"
-                                  height="1.6rem"
+                                  height="1.9rem"
                                   viewBox="0 0 16 16"
                                   aria-hidden="true"
                                   focusable="false">
@@ -227,7 +215,7 @@
 
                                 <svg
                                   width="1.6rem"
-                                  height="1.6rem"
+                                  height="1.9rem"
                                   viewBox="0 0 16 16"
                                   aria-hidden="true"
                                   focusable="false">

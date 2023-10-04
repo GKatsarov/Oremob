@@ -26,7 +26,6 @@
 
 <script src="{{ 'quantity-popover.js' | asset_url }}" defer="defer"></script>
 
-<h1>{{ customer.email }}</h1>
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
@@ -56,7 +55,7 @@
             <caption class="visually-hidden">
               {{ 'sections.cart.title' | t }}
             </caption>
-            <thead>
+            <thead class="bg-white">
               <tr>
                 <th class="caption-with-letter-spacing" colspan="2" scope="col">
                   {{ 'sections.cart.headings.product' | t }}
