@@ -43,9 +43,10 @@
     "e6bd5599-e5db-4427-a6c8-9029f117e402": {
       "type": "main-collection",
       "settings": {
+        "collection": "frontpage",
         "products_per_page": 16,
         "columns_desktop": 4,
-        "image_ratio": "adapt",
+        "image_ratio": "portrait",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
