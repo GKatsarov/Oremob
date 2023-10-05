@@ -35,7 +35,7 @@
           {%- for link in section.settings.menu.links -%}
             {% assign linkUrl = link.url %}
             {% assign linkTitle = link.title %}
-            {%- if customer -%}
+            {%- if linkUrl == routes.account_login_url and customer -%}
               {% assign linkUrl = routes.account_url %}
               {% assign linkTitle = 'customer.account_fallback' | t %}
             {%- endif -%}
