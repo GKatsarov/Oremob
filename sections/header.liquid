@@ -4,17 +4,17 @@
 -%}
 
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} client:idle>
-  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 py-8 text-lg sm:text-xl lg:text-2xl">
+  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 py-8 text-xl sm:text-2xl lg:text-3xl">
 
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-start">
+    <div class="flex items-center gap-12 w-full lg:w-auto justify-start mt-8">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'logo.png' | asset_url }}" class="h-14 mr-3" />
+        <img src="{{ 'logo.png' | asset_url }}" style="height: 5.5rem;" class="mr-3" />
       </a>
     </div>
 
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-4">
+    <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-8">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'shop.png' | asset_url }}" class="h-14 md:h-20 xl:h-24" />
+        <img src="{{ 'shop.png' | asset_url }}" class="h-28 md:h-32 xl:h-40" />
       </a>
     </div>
 
@@ -41,7 +41,7 @@
             {%- endif -%}
             <li class="cursor-pointer bg-black group">
               <a href="{{ link.url }}" class="w-full block group-hover:text-customGreen">
-                <div class="inline-block w-4 h-4 border-2 border-white rounded-full top-0.5 relative">
+                <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
                   <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if link.current %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
                 </div>
                 <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>

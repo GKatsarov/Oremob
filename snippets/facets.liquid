@@ -451,6 +451,7 @@
               </noscript>
             </div>
           {%- endif -%}
+          {% if enable_sorting %}
           <div class="product-count light" role="status">
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
@@ -478,6 +479,7 @@
               </svg>
             </div>
           </div>
+            {% endif %}
         {%- endif -%}
       </form>
     </facet-filters-form>

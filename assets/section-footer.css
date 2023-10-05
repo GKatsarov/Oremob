@@ -1,5 +1,6 @@
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  font-size: 16px;
 }
 
 .footer:not(.color-background-1) {
@@ -439,9 +440,6 @@
   max-width: 20rem;
 }
 
-.copyright__content {
-  font-size: 1.1rem;
-}
 
 .copyright__content a {
   color: currentColor;

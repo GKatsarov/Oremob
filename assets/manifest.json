@@ -18,7 +18,7 @@
     "src": "frontend/entrypoints/customers.js"
   },
   "frontend/entrypoints/theme.css": {
-    "file": "theme-0a6e03f5.css",
+    "file": "theme-6c0597bd.css",
     "isEntry": true,
     "src": "frontend/entrypoints/theme.css"
   },
@@ -177,7 +177,7 @@
     "src": "frontend/lib/shopify_common.js"
   },
   "frontend/styles/base.css": {
-    "file": "base-3e2fe5f8.css",
+    "file": "base-b9b3efc2.css",
     "isEntry": true,
     "src": "frontend/styles/base.css"
   },
