@@ -4,6 +4,7 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "class": "mt-auto w-full",
       "settings": {
         "color_scheme": "accent-1",
         "newsletter_enable": false,
