@@ -35,16 +35,16 @@
           {%- for link in section.settings.menu.links -%}
             {% assign linkUrl = link.url %}
             {% assign linkTitle = link.title %}
-            {%- if linkUrl == routes.account_login_url and customer -%}
+            {%- if customer -%}
               {% assign linkUrl = routes.account_url %}
               {% assign linkTitle = 'customer.account_fallback' | t %}
             {%- endif -%}
             <li class="cursor-pointer bg-black group">
-              <a href="{{ link.url }}" class="w-full block group-hover:text-customGreen">
+              <a href="{{ linkUrl }}" class="w-full block group-hover:text-customGreen">
                 <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
                   <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if link.current %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
                 </div>
-                <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
+                <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ linkTitle }}</label>
               </a>
             </li>
           {%- endfor -%}
