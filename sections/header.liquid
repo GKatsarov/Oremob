@@ -6,13 +6,13 @@
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} client:idle>
   <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 py-8 text-xl sm:text-2xl lg:text-3xl">
 
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-start mt-8">
+    <div class="flex items-center gap-12 w-full lg:w-auto justify-start mt-8 sm-max:mt-2">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'logo.png' | asset_url }}" style="height: 5.5rem;" class="mr-3" />
+        <img src="{{ 'logo.png' | asset_url }}" class="mr-3 h-[5.5rem] sm-max:h-12" />
       </a>
     </div>
 
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-8">
+    <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-8 sm-max:hidden">
       <a href="{{ routes.root_url }}" class="flex items-center">
         <img src="{{ 'shop.png' | asset_url }}" class="h-28 md:h-32 xl:h-40" />
       </a>

@@ -915,6 +915,17 @@ summary::-webkit-details-marker {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
     max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
+  .grid--4-col-desktop .grid__item__extra{
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+}
+
+.grid__item__extra .card__inner{
+  width: 50%;
+}
+.grid__item__extra .card__inner_sm{
+  width: 25%;
 }
 
 .grid--gapless.grid {
@@ -955,6 +966,9 @@ summary::-webkit-details-marker {
 
   .grid--4-col-tablet .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  }
+  .grid--4-col-desktop .grid__item__extra{
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .grid--3-col-tablet .grid__item {
@@ -1008,6 +1022,10 @@ summary::-webkit-details-marker {
   .grid--4-col-desktop .grid__item {
     width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
     max-width: calc(25% - var(--grid-desktop-horizontal-spacing) * 3 / 4);
+  }
+  .grid--4-col-desktop .grid__item__extra{
+    width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+    max-width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   .grid--3-col-desktop .grid__item {
@@ -1071,6 +1089,11 @@ summary::-webkit-details-marker {
     width: calc(50% - var(--grid-mobile-horizontal-spacing) / 2);
   }
 
+  .grid--2-col-tablet-down .grid__item__extra {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item,
   .grid--peek .grid__item {
     width: calc(50% - var(--grid-mobile-horizontal-spacing) - 3rem);
@@ -1096,12 +1119,23 @@ summary::-webkit-details-marker {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) - 3rem);
   }
 
+  .slider--tablet.grid--peek.grid--2-col-tablet .grid__item__extra,
+  .slider--tablet.grid--peek.grid--2-col-tablet-down .grid__item__extra {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .slider--tablet.grid--peek .grid__item:first-of-type {
     margin-left: 1.5rem;
   }
 
   .grid--2-col-tablet-down .grid__item {
     width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+  }
+
+  .grid--2-col-tablet-down .grid__item__extra {
+    width: 100%;
+    max-width: 100%;
   }
 
   .grid--1-col-tablet-down.grid--peek .grid__item {

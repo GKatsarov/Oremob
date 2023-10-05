@@ -196,7 +196,6 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type='radio'] + label {
   border: white;
   background-color: white;
-  border-radius: 0.5rem;
   color: black;
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
@@ -230,7 +229,6 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type='radio']:checked + label {
   background-color: #BEFF3D;
   color: black;
-  border-radius: 0.5rem;
   border: #BEFF3D;
 }
 
