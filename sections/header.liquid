@@ -33,21 +33,30 @@
       <div id="dropdownDefaultRadio" class="z-10 hidden bg-black divide-y divide-gray-100 rounded-lg shadow">
         <ul class="p-3 space-y-3 text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
           {%- for link in section.settings.menu.links -%}
-            {% assign linkUrl = link.url %}
-            {% assign linkTitle = link.title %}
-            {%- if linkUrl == routes.account_login_url and customer -%}
-              {% assign linkUrl = routes.account_url %}
-              {% assign linkTitle = 'customer.account_fallback' | t %}
-            {%- endif -%}
             <li class="cursor-pointer bg-black group">
-              <a href="{{ linkUrl }}" class="w-full block group-hover:text-customGreen">
+              <a href="{{ link.url }}" class="w-full block group-hover:text-customGreen">
                 <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
                   <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if link.current %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
                 </div>
-                <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ linkTitle }}</label>
+                <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
               </a>
             </li>
           {%- endfor -%}
+          {%liquid
+            assign loginTitle = 'customer.account_fallback' | t | upcase
+            if customer
+              assign loginTitle = 'customer.login_page.title' | t | upcase
+            endif
+           %}
+          <li class="cursor-pointer bg-black group">
+            <a href="{{ routes.account_login_url }}" class="w-full block group-hover:text-customGreen">
+              <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
+                <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if routes.account_login_url %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
+              </div>
+              <label for="default-radio-{{ routes.account_login_url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ loginTitle }}</label>
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
