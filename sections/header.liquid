@@ -13,8 +13,9 @@
     </div>
 
     <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-8 sm-max:hidden">
-      <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'shop.png' | asset_url }}" class="h-28 md:h-32 xl:h-40" />
+      <a href="/" class="relative" style="display: block; position: relative;">
+        <h1 style="position: relative;font-size: 60px;font-stretch: condensed;">SHOP</h1>
+        <img style="top: -75%;position: absolute;" src="{{ 'shop.svg' | asset_url }}" alt="" class="motion-reduce" loading="lazy" width="368" height="194">
       </a>
     </div>
 

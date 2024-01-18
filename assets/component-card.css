@@ -102,6 +102,7 @@
 
 .card-information {
   text-align: var(--text-alignment);
+  font-family: "NeueHaasDisplay-Black", serif;
 }
 
 .card__media,
@@ -201,6 +202,7 @@
   margin-top: 0;
   margin-bottom: 0;
   font-size: 12px;
+  font-family: "NeueHaasDisplay-Black", serif;
 }
 
 .card__heading:last-child {

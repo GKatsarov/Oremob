@@ -18,7 +18,7 @@
     "src": "frontend/entrypoints/customers.js"
   },
   "frontend/entrypoints/theme.css": {
-    "file": "theme-0b25bdbf.css",
+    "file": "theme-57f4fc64.css",
     "isEntry": true,
     "src": "frontend/entrypoints/theme.css"
   },
@@ -186,13 +186,21 @@
     "isEntry": true,
     "src": "frontend/styles/components.css"
   },
-  "frontend/styles/fonts/ABCGravity-Normal-Trial.otf": {
-    "file": "ABCGravity-Normal-Trial-a1353309.otf",
-    "src": "frontend/styles/fonts/ABCGravity-Normal-Trial.otf"
+  "frontend/styles/fonts/ABCGravity-Wide.woff": {
+    "file": "ABCGravity-Wide-0681fd47.woff",
+    "src": "frontend/styles/fonts/ABCGravity-Wide.woff"
   },
-  "frontend/styles/fonts/ABCGravity-Normal-Trial.woff2": {
-    "file": "ABCGravity-Normal-Trial-dbf685e7.woff2",
-    "src": "frontend/styles/fonts/ABCGravity-Normal-Trial.woff2"
+  "frontend/styles/fonts/ABCGravity-Wide.woff2": {
+    "file": "ABCGravity-Wide-6d4c8c6a.woff2",
+    "src": "frontend/styles/fonts/ABCGravity-Wide.woff2"
+  },
+  "frontend/styles/fonts/NeueHaasDisplayBlack.ttf": {
+    "file": "NeueHaasDisplayBlack-e4fdd2d3.ttf",
+    "src": "frontend/styles/fonts/NeueHaasDisplayBlack.ttf"
+  },
+  "frontend/styles/fonts/NeueHaasDisplayBlack.woff2": {
+    "file": "NeueHaasDisplayBlack-db64797a.woff2",
+    "src": "frontend/styles/fonts/NeueHaasDisplayBlack.woff2"
   },
   "frontend/styles/utilities.css": {
     "file": "utilities-03582dda.css",

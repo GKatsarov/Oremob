@@ -1,10 +1,18 @@
 @font-face {
-    font-family: "ABCGravity-Normal-Trial";
+    font-family: "ABCGravity-Wide";
     font-style: normal;
     font-weight: normal;
     font-display: swap;
-    src: url("ABCGravity-Normal-Trial.woff2") format("woff2"),
-    url("ABCGravity-Normal-Trial.otf") format("opentype");
+    src: url("ABCGravity-Wide.woff2") format("woff2"),
+    url("ABCGravity-Wide.woff") format("woff");
+}
+@font-face {
+    font-family: "NeueHaasDisplay-Black";
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+    src: url("NeueHaasDisplayBlack.woff2") format("woff2"),
+    url("NeueHaasDisplayBlack.ttf") format("ttf");
 }
 
 h2{
