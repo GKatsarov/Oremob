@@ -4,6 +4,9 @@
   "sections": {
     "header": {
       "type": "header",
+      "custom_css": [
+        "{margin-top: 20px !important;}"
+      ],
       "settings": {
         "menu": "main-menu",
         "enable_sticky_header": true
