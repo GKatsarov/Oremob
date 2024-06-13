@@ -3299,5 +3299,5 @@ details-disclosure > details {
   scale: var(--zoom-in-ratio);
 }
 
-.shopify-section-header {
+shopify-section-header {
   margin-top: 20px !important;}
