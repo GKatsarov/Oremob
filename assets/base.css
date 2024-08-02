@@ -3301,3 +3301,7 @@ details-disclosure > details {
 
 
 .shopify-policy__title {display:none!important;}
+
+.ul.a {
+  list-style-type: circle!important;
+}
