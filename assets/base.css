@@ -3298,3 +3298,6 @@ details-disclosure > details {
   transition: scale var(--duration-short) linear;
   scale: var(--zoom-in-ratio);
 }
+
+
+.shopify-policy__title {display:none!important;}
