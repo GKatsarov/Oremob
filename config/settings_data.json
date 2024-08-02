@@ -1,10 +1,19 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "logo_width": 90,
     "type_header_font": "assistant_n4",
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
-    "body_scale": 80,
+    "body_scale": 100,
     "page_width": 1600,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
@@ -99,11 +108,11 @@
     "brand_headline": "",
     "brand_description": "<p><\/p>",
     "brand_image_width": 100,
-    "social_facebook_link": "https:\/\/facebook.com\/shopify",
-    "social_instagram_link": "http:\/\/instagram.com\/shopify",
+    "social_facebook_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/ore_ore_ore_\/",
     "social_youtube_link": "",
     "social_tiktok_link": "",
-    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_twitter_link": "https:\/\/x.com\/ore_times_3",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
@@ -262,7 +271,7 @@
       "type_header_font": "assistant_n4",
       "heading_scale": 100,
       "type_body_font": "assistant_n4",
-      "body_scale": 80,
+      "body_scale": 100,
       "page_width": 1200,
       "spacing_sections": 0,
       "spacing_grid_horizontal": 8,
