@@ -95,7 +95,7 @@
         {%- endif -%}
       {%- endfor -%}
   {%- endif -%}
-
+<localization-form>
   <div class="disclosure">
     <button
       type="button"
@@ -105,7 +105,7 @@
       {% render 'icon-caret' %}
     </button>
   <div class="disclosure__list-wrapper country-selector" hidden>
-    <ul id="LegalsList" role="list" class="disclosure__list list-unstyled">
+    <ul id="FooterCountryList" role="list" class="disclosure__list list-unstyled">
       {%- for policy in shop.policies -%}
         {%- if policy != blank -%}
           <li class="disclosure__item" tabindex="-1">
@@ -122,5 +122,5 @@
       </ul>
     </div>
   </div>
-  
+  </localization-form>
 </ul>
