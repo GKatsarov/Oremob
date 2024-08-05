@@ -95,4 +95,33 @@
         {%- endif -%}
       {%- endfor -%}
   {%- endif -%}
+
+  <div class="disclosure">
+    <button
+      type="button"
+      class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+      aria-expanded="false"
+    >
+      <span>Legal</span>
+      {% render 'icon-caret' %}
+    </button>
+    <div class="disclosure__list-wrapper" hidden>
+      <ul id="{{ localPosition }}List" role="list" class="disclosure__list list-unstyled">
+      {%- for policy in shop.policies -%}
+        {%- if policy != blank -%}
+          <li class="disclosure__item" tabindex="-1">
+            <a
+              class="link link--text disclosure__link caption-large focus-inset"
+              href="{{ policy.url }}">
+              <span>
+                <span>{{ policy.title }}</span>
+              </span>
+            </a>
+          </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+  
 </ul>
