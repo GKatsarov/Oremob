@@ -3210,7 +3210,7 @@ details-disclosure > details {
 }
 
 .rte li {
-  list-style: inherit;
+  list-style: initial;
 }
 
 .rte li:last-child {
