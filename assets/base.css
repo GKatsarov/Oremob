@@ -3309,3 +3309,6 @@ details-disclosure > details {
   margin-top:4rem;
   font-family:NeueHaasDisplay-Black,serif;
 }
+.shopify-policy__container *{
+  font-family:NeueHaasDisplay-Black,serif;
+}
