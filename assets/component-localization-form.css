@@ -144,6 +144,7 @@ noscript .localization-selector.link {
   position: absolute;
   bottom: 100%;
   transform: translateY(-1rem);
+  left: -82px;
   z-index: 2;
   background-color: rgb(var(--color-background));
   border-radius: var(--popup-corner-radius);
