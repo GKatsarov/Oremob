@@ -82,19 +82,6 @@
       </a>
     </li>
   {%- endif -%}
-
-  {%- if section.settings.show_policy -%}
-      {%- for policy in shop.policies -%}
-        {%- if policy != blank -%}
-          <li class="list-social__item">
-            <a href="{{ policy.url }}" class="list-social__link">
-              {%- render 'icon-radio' -%}
-              <span>{{ policy.title }}</span>
-            </a>
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-  {%- endif -%}
 <localization-form>
   <div class="disclosure">
     <button
