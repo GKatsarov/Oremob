@@ -3305,3 +3305,7 @@ details-disclosure > details {
 .ul.a {
   list-style-type: circle!important;
 }
+.shopify-policy__container{
+  margin-top:4rem;
+  font-family:NeueHaasDisplay-Black,serif;
+}
