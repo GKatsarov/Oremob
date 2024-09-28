@@ -163,7 +163,6 @@
   flex: 0 0 100%;
   padding: 0;
   margin: 0 0 1.2rem 0;
-  max-width: 44rem;
   min-width: fit-content;
   border: none;
 }
@@ -199,7 +198,7 @@ fieldset.product-form__input .form__label {
   color: black;
   display: inline-block;
   margin: 0.7rem 0.5rem 0.2rem 0;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
   line-height: 1;
@@ -207,6 +206,7 @@ fieldset.product-form__input .form__label {
   transition: border var(--duration-short) ease;
   cursor: pointer;
   position: relative;
+  border-radius: 6px;
 }
 
 .product-form__input input[type='radio'] + label:before {
@@ -319,14 +319,22 @@ fieldset.product-form__input .form__label {
 }
 
 .product__info-container .product-form,
-.product__info-container .product__description,
+.product__info-container,
 .product__info-container .icon-with-text {
   margin: 2.5rem 0;
+  //font-family: "NeueHaasDisplay-Black", serif;
+}
+
+.product__description {
+  margin: 2.5rem 0;
   font-family: "NeueHaasDisplay-Black", serif;
+  font-weight: 300;
 }
 
 .product__text {
   margin-bottom: 0;
+  font-size: 1.6rem;
+  color: #9D9D9D;
 }
 
 a.product__text {

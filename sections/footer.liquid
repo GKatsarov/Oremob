@@ -27,7 +27,8 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<!-- section-{{ section.id }}-padding -->
+<footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -48,7 +49,109 @@
     or section.settings.enable_follow_on_shop
   -%}
     {%- unless only_empty_brand -%}
-      <div class="block">
+
+
+        <div class="footer__content-bottom-wrapper bg-[#C3C3C3]">
+          <div class="footer__column footer__localization flex justify-center items-center h-full">
+            
+            {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+              <noscript>
+                {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
+                  <div class="localization-form__select text-center flex flex-col justify-center items-center">
+                    <h2 class="visually-hidden uppercase text-center text-black" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                    <select
+                      class="localization-selector link"
+                      name="country_code"
+                      aria-labelledby="FooterCountryLabelNoScript"
+                    >
+                      {%- for country in localization.available_countries -%}
+                        <option
+                          value="{{ country.iso_code }}"
+                          {%- if country.iso_code == localization.country.iso_code %}
+                            selected
+                          {% endif %}
+                        >
+                          {{ country.name }} ({{ country.currency.iso_code }}
+                          {{ country.currency.symbol }})
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                  <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
+                {%- endform -%}
+              </noscript>
+        
+              <localization-form>
+                {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
+                  <div class="no-js-hidden flex flex-col justify-center items-center h-full">
+                    <h2 class="caption-large text-body uppercase text-center mb-2" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                    {%- render 'country-localization', localPosition: 'FooterCountry' -%}
+                  </div>
+                {%- endform -%}
+              </localization-form>
+            {%- endif -%}
+            
+            {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+              <noscript>
+                {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
+                  <div class="localization-form__select text-center flex flex-col justify-center items-center">
+                    <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
+                      {{ 'localization.language_label' | t }}
+                    </h2>
+                    <select
+                      class="localization-selector link"
+                      name="locale_code"
+                      aria-labelledby="FooterLanguageLabelNoScript"
+                    >
+                      {%- for language in localization.available_languages -%}
+                        <option
+                          value="{{ language.iso_code }}"
+                          lang="{{ language.iso_code }}"
+                          {%- if language.iso_code == localization.language.iso_code %}
+                            selected
+                          {% endif %}
+                        >
+                          {{ language.endonym_name | capitalize }}
+                        </option>
+                      {%- endfor -%}
+                    </select>
+                    {% render 'icon-caret' %}
+                  </div>
+                  <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+                {%- endform -%}
+              </noscript>
+        
+              <localization-form>
+                {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
+                  <div class="no-js-hidden flex flex-col justify-center items-center h-full">
+                    <h2 class="caption-large text-body mb-2" id="FooterLanguageLabel">
+                      {{ 'localization.language_label' | t }}
+                    </h2>
+                    {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
+                  </div>
+                {%- endform -%}
+              </localization-form>
+            {%- endif -%}
+        
+          </div>
+        
+          <div class="footer__column footer__column--info">
+            {%- if section.settings.payment_enable -%}
+              <div class="footer__payment">
+                <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+                <ul class="list list-payment" role="list">
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li class="list-payment__item">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>       
+
         {%- if section.blocks.size > 0 -%}
           {%- liquid
             if section.blocks.size == 9
@@ -159,7 +262,7 @@
         {%- endif -%}
 
         <div
-          class="flex lg:justify-between justify-center px-6{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          class="flex lg:justify-between justify-center px-6 lg:px-[64px] {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
           {% if settings.animations_reveal_on_scroll %}
             data-cascade
           {% endif %}
@@ -238,129 +341,139 @@
             </div>
           {%- endif -%}
 
-          <div class="caption text-white sm-max:hidden md-only:hidden lg:block self-center">
-            <span class="copyright__content"
-            >&copy; {{ 'now' | date: '%Y' }} {{ 'OREMOB UG' | link_to: routes.root_url -}}
-            </span>
-            <span class="copyright__content">, all rights reserved.</span>
+          <div class="flex flex-col lg:flex-row justify-between">
+  
+            <!-- Left Section: Social Icons and Copyright -->
+            <div class="caption text-white flex flex-col items-start sm-max:hidden md-only:hidden lg:block self-center mr-[30rem]">
+              
+              <!-- Social Icons -->
+              <div class="flex justify-start items-center space-x-16 mb-3 lg:w-[56rem]">
+                <!-- Twitter -->
+                <a href="https://x.com/ore_times_3" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="{{ 'x-twitter.svg' | asset_url }}" 
+                    class="w-[2.5rem] h-[2.5rem]" 
+                    width="2.5rem" 
+                    height="2.5rem" 
+                    alt="Twitter" 
+                  />
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/ore_ore_ore_/" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="{{ 'instagram.svg' | asset_url }}" 
+                    class="w-[2.25rem] h-[2.5rem]" 
+                    width="2.25rem" 
+                    height="2.25rem" 
+                    alt="Instagram" 
+                  />
+                </a>
+                
+                <!-- Discord -->
+                <a href="https://discord.com/invite/oreoreore" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="{{ 'discord.svg' | asset_url }}" 
+                    class="w-[3.1rem] h-[2.5rem]" 
+                    width="3.1rem" 
+                    height="2.5rem" 
+                    alt="Discord" 
+                  />
+                </a>
+              </div>
+          
+              <!-- COPYRIGHT Text -->
+              <div class="text-white">
+                COPYRIGHT {{ 'now' | date: '%Y' }}
+              </div>
+              <div class="w-full">
+                {{ 'OREMOB UG' | link_to: routes.root_url -}} , ALL RIGHTS RESERVED
+              </div>          
+            </div>
+          
+            <!-- Right Section: Policy Links -->
+            <div class="flex flex-wrap justify-start items-end gap-[2rem] mb-10 mt-6 w-full lg:w-auto">
+              {%- for policy in shop.policies -%}
+                {%- if policy != blank -%}
+                  <div class="disclosure__item flex items-center space-x-1 px-4 py-2 rounded-lg bg-[#202020]" tabindex="-1">
+                    <img 
+                      src="{{ 'policy-star.svg' | asset_url }}" 
+                      class="w-[2.125rem] h-[2.125rem]" 
+                      width="2.125rem" 
+                      height="2.125rem" 
+                      alt="Policy Icon" 
+                    />
+                    <a
+                      class="link link--text disclosure__link__policy focus-inset text-white"
+                      href="{{ policy.url }}">
+                      <span class="text-[1.25rem] lg:text-[1.5rem]">{{ policy.title }}</span>
+                    </a>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
           </div>
+          
 
+          <!--
           {%- if section.settings.show_social and has_social_icons -%}
             {%- render 'social-icons', class: 'footer__list-social' -%}
           {%- endif -%}
-        </div>
-      </div>
+          -->
+        </div> 
+
     {%- endunless -%}
   {%- endif -%}
 
   <div
-    class="footer__content-bottom lg:hidden{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="footer__content-bottom pb-[20px] lg:hidden{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
       data-cascade
     {% endif %}
-  >
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
-        {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
-                <select
-                  class="localization-selector link"
-                  name="country_code"
-                  aria-labelledby="FooterCountryLabelNoScript"
-                >
-                  {%- for country in localization.available_countries -%}
-                    <option
-                      value="{{ country.iso_code }}"
-                      {%- if country.iso_code == localization.country.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ country.name }} ({{ country.currency.iso_code }}
-                      {{ country.currency.symbol }})
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
-            {%- endform -%}
-          </noscript>
-          <localization-form>
-            {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                {%- render 'country-localization', localPosition: 'FooterCountry' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
+  >     
 
-        {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
-          <noscript>
-            {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
-              <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                <select
-                  class="localization-selector link"
-                  name="locale_code"
-                  aria-labelledby="FooterLanguageLabelNoScript"
-                >
-                  {%- for language in localization.available_languages -%}
-                    <option
-                      value="{{ language.iso_code }}"
-                      lang="{{ language.iso_code }}"
-                      {%- if language.iso_code == localization.language.iso_code %}
-                        selected
-                      {% endif %}
-                    >
-                      {{ language.endonym_name | capitalize }}
-                    </option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-              <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
-            {%- endform -%}
-          </noscript>
-
-          <localization-form>
-            {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
-              <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterLanguageLabel">
-                  {{ 'localization.language_label' | t }}
-                </h2>
-                {%- render 'language-localization', localPosition: 'FooterLanguage' -%}
-              </div>
-            {%- endform -%}
-          </localization-form>
-        {%- endif -%}
-      </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
-      </div>
+    <div class="flex justify-center items-center flex-row space-x-16">
+      <!-- Twitter -->
+      <a href="https://x.com/ore_times_3" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="{{ 'x-twitter.svg' | asset_url }}" 
+          class="w-[20px] h-[20px]" 
+          width="20" 
+          height="20" 
+          alt="Twitter" 
+        />
+      </a>
+    
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/ore_ore_ore_/" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="{{ 'instagram.svg' | asset_url }}" 
+          class="w-[18px] h-[20px]" 
+          width="18" 
+          height="20" 
+          alt="Instagram" 
+        />
+      </a>
+    
+      <!-- Discord -->
+      <a href="https://discord.com/invite/oreoreore" target="_blank" rel="noopener noreferrer">
+        <img 
+          src="{{ 'discord.svg' | asset_url }}" 
+          class="w-[25px] h-[20px]" 
+          width="25" 
+          height="20" 
+          alt="Discord" 
+        />
+      </a>
     </div>
+  
+
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
-      <div class="footer__copyright caption text-white">
-        <span class="copyright__content"
-          >&copy; {{ 'now' | date: '%Y' }} {{ 'OREMOB UG' | link_to: routes.root_url -}}
+      <div class="footer__copyright caption text-white flex flex-col">
+        <span class="copyright__content">
+          COPYRIGHT {{ 'now' | date: '%Y' }}
         </span>
-        <span class="copyright__content">, all rights reserved.</span>
+        <span class="copyright__content">{{ 'OREMOB UG' | link_to: routes.root_url -}} , ALL RIGHTS RESERVED</span>
       </div>
     </div>
   </div>

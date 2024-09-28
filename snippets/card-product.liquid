@@ -56,7 +56,7 @@
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <div class="media media--transparent media--hover-effect">
+            <div class="media media--transparent media--hover-effect rounded-xl">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="
@@ -69,7 +69,7 @@
                   {{ card_product.featured_media | image_url }} {{ card_product.featured_media.width }}w
                 "
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2) rounded-xl"
                 alt="{{ card_product.featured_media.alt | escape }}"
                 class="motion-reduce"
                 {% unless lazy_load == false %}
@@ -108,8 +108,8 @@
                           style="width: 100%;opacity: 1;{% if soldOutCross == true %}height:100%;{% else %}top: 25%;height: 50%;{% endif %}"
                           src="
                             {%- if soldOutCross == true -%}{{ 'sold-out-cross.svg' | asset_url }}
-                            {%- elsif comingSoon == true -%}{{ 'coming-soon.svg' | asset_url }}
-                            {%- else -%}{{ 'sold-out.svg' | asset_url }}{%- endif -%}"
+                            {%- elsif comingSoon == true -%}{{ 'coming-soon-new.svg' | asset_url }}
+                            {%- else -%}{{ 'sold-out-new.svg' | asset_url }}{%- endif -%}"
                           alt=""
                           class="motion-reduce relative"
                           loading="lazy"
@@ -153,7 +153,7 @@
         <div class="card__inner card__inner_sm {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
              style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
             <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-              <div class="media media--transparent media--hover-effect">
+              <div class="media media--transparent media--hover-effect rounded-xl">
                 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
                 <img
                         srcset="
@@ -184,7 +184,7 @@
         <div class="card__inner card__inner_sm {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
              style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <div class="media media--transparent media--hover-effect">
+            <div class="media media--transparent media--hover-effect rounded-xl">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                       srcset="
@@ -211,8 +211,9 @@
         </div>
       {% endif %}
 
+      <!-- Name and Price Container -->
       <div class="card__content">
-        <div class="card__information md:flex justify-between items-center">
+        <div class="card__information flex flex-wrap justify-between items-center">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -222,7 +223,7 @@
             <a
               href="{{ card_product.url }}"
               id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
+              class="full-unstyled-link text-[16px] font-medium"
               aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
             >
               {{ card_product.title | escape }}
@@ -272,10 +273,12 @@
               </p>
             {%- endif -%}
 
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            <!-- The price tag -->
+            {% render 'price', product: card_product, price_class: 'text-[16px]', show_compare_at_price: true %}
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
-                <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
+                <a class="caption">{{ 'products.product.volume_pricing.note' | t }}</a>
               </div>
             {%- endif -%}
           </div>
@@ -352,11 +355,13 @@
                     class="product-variant-id"
                     disabled
                   >
+
+                  <!-- Add to cart button -->
                   <button
                     id="{{ product_form_id }}-submit"
                     type="submit"
                     name="add"
-                    class="quick-add__submit button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
+                    class="quick-add__submit uppercase button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add{% endif %}"
                     aria-haspopup="dialog"
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     aria-live="polite"
@@ -430,7 +435,7 @@
         style="--ratio-percent: 100%;"
       >
         <div class="card__media">
-          <div class="media media--transparent">
+          <div class="media media--transparent rounded-xl">
             {%- if placeholder_image -%}
               {{ placeholder_image | placeholder_svg_tag: 'placeholder-svg' }}
             {%- else -%}

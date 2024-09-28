@@ -48,14 +48,14 @@ pnpm install
 
 ```bash
 # Launch the Shopify and Vite servers in parallel
-pnpm dev --store johns-apparel --live-reload full-page
+pnpm dev --store oremobshop --live-reload full-page
 ```
 
 ## Production
 
 ```bash
 # Bundle your theme's assets and upload your local theme files to Shopify
-pnpm run deploy --store johns-apparel
+pnpm run deploy --store oremobshop
 ```
 
 Checkout [Shopify CLI commands for themes](https://shopify.dev/docs/themes/tools/cli/commands) for more information.

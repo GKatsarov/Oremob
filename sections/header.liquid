@@ -3,67 +3,178 @@
   assign input_class = 'focus:border-primary/20'
 -%}
 
-<{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} client:idle>
-  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none backdrop-blur-lg px-4 flex justify-between items-center gap-4 md:px-8 lg:gap-8 lg:px-12 py-8 text-xl sm:text-2xl lg:text-3xl">
-
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-start mt-8 sm-max:mt-2">
+{%- if section.settings.enable_sticky_header -%}
+  <sticky-header client:idle>
+{%- else -%}
+  <div client:idle>
+{%- endif -%}
+  
+  <!-- Header Section with backdrop blur -->
+  <header id="shopify-section-header" role="banner" class="{{ container_class }} h-nav w-full leading-none bg-primary bg-opacity-50 px-4 flex justify-between items-center mb-[1.25rem] md:px-8 lg:px-12 text-xl md:text-2xl lg:text-3xl"
+          style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+    
+    <!-- Left-aligned Logo (hidden on small screens) -->
+    <div class="flex items-center w-full mt-[26px] lg:w-auto justify-start sm-max:hidden">
       <a href="{{ routes.root_url }}" class="flex items-center">
-        <img src="{{ 'logo.png' | asset_url }}" class="mr-3 h-[5.5rem] sm-max:h-12" />
+        <img 
+          src="{{ 'logo.png' | asset_url }}" 
+          class="md:h-[68px] w-[50px] md:w-[76px]" 
+          width="50" 
+          height="44" 
+          alt="Logo" 
+        />
       </a>
     </div>
 
-    <div class="flex items-center gap-12 w-full lg:w-auto justify-center mt-8 sm-max:hidden">
+    <!-- Shopping Button -->
+    <div class="flex items-center w-full justify-start md:hidden mt-[24px]">
+      <a href="{{ routes.cart_url }}" class="flex items-center justify-between rounded-xl bg-gray-300 text-white p-1 w-[100px] h-[40px]" id="cart-icon-bubble">
+        <div class="flex items-center justify-center w-1/2 h-full bg-[#C3C3C3] rounded-l-xl">
+          <img src="{{ 'shopping_basket.svg' | asset_url }}" alt="Cart" class="w-12 h-12" loading="lazy" width="24" height="24" />
+        </div>
+        
+        <div class="flex items-center justify-center w-1/2 h-full bg-black rounded-r-xl">
+          <span class="text-customGreen text-3xl font-bold">{{ cart.item_count }}</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Centered Logo -->
+    <div class="flex items-center w-full mt-[24px] lg:w-auto justify-center md:hidden">
+      <a href="{{ routes.root_url }}" class="flex items-center">
+        <img 
+          src="{{ 'logo.png' | asset_url }}" 
+          class="md:h-[68px] w-[50px] md:w-[76px]" 
+          width="50" 
+          height="44" 
+          alt="Logo" 
+        />
+      </a>
+    </div>
+
+    <div class="flex items-center w-full mt-[24px] lg:w-auto justify-center sm-max:hidden">
       <a href="/" class="relative" style="display: block; position: relative;">
-        <h1 class="text-8xl relative">SHOP</h1>
-        <img style="top: -175%;" src="{{ 'shop.svg' | asset_url }}" alt="" class="motion-reduce absolute" loading="lazy" width="368" height="194">
+        <img src="{{ 'overlay_shop.svg' | asset_url }}" alt="" class="motion-reduce" loading="lazy" width="175" height="104">
       </a>
     </div>
 
-    <div class="flex items-center justify-end w-full gap-4 lg:gap-1 lg:w-auto">
-
-      <a href="{{ routes.cart_url }}" class="relative flex items-center justify-center mr-2 size" id="cart-icon-bubble">
-        {{ 'templates.cart.cart' | t | upcase }} ( {{ cart.item_count }} )
+    <!-- Right-aligned Shopping Button -->
+    <div class="flex items-center justify-end mt-[30px] w-full space-x-4 lg:w-auto">
+      
+      <a href="{{ routes.cart_url }}" class="flex items-center justify-between rounded-xl bg-gray-300 text-white p-1 w-[100px] h-[40px] sm-max:hidden" id="cart-icon-bubble">
+        <div class="flex items-center justify-center w-1/2 h-full bg-[#C3C3C3] rounded-l-xl">
+          <img src="{{ 'shopping_basket.svg' | asset_url }}" alt="Cart" class="w-12 h-12" loading="lazy" width="24" height="24" />
+        </div>
+        
+        <div class="flex items-center justify-center w-1/2 h-full bg-black rounded-r-xl">
+          <span class="text-customGreen text-3xl font-bold">{{ cart.item_count }}</span>
+        </div>
       </a>
 
-      <button id="dropdownRadioButton" data-dropdown-toggle="dropdownDefaultRadio" class="group rounded-md px-2 pt-2 pb-1.5 text-center inline-flex items-center bg-black" type="button">
-          <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-4 h-4 text-white border-white group-hover:bg-customGreen group-hover:text-customGreen group-focus:ring-0 bg-black">
-          <label for="default-radio-current" class="cursor-pointer ml-1 font-medium group-hover:text-customGreen text-white">{{ section.settings.menu.links[0].title }}</label>
-      </button>
+      <!-- Dropdown Menu with Full-screen overlay and dynamic content -->
+      <div class="relative inline-block">
+        <!-- Button to trigger the dropdown -->
+        <button id="dropdownRadioButton" class="group rounded-xl md:px-4 md:py-[10px] text-center md:inline-flex items-center md:bg-black" type="button">
 
-      <!-- Dropdown menu -->
-      <div id="dropdownDefaultRadio" class="z-10 hidden bg-black divide-y divide-gray-100 rounded-lg shadow">
-        <ul class="p-3 space-y-3 text-gray-700 dark:text-gray-200" aria-labelledby="dropdownRadioButton">
-          {%- for link in section.settings.menu.links -%}
-            <li class="cursor-pointer bg-black group">
-              <a href="{{ link.url }}" class="w-full block group-hover:text-customGreen">
-                <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
-                  <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if link.current %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
-                </div>
-                <label for="default-radio-{{ link.url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ link.title }}</label>
+          <!-- Show this when screen is bigger -->
+          <div class="items-center sm-max:hidden">
+            <input style="top:-1px;" id="default-radio-current" disabled type="radio" value="" name="default-radio" class="relative cursor-pointer w-8 h-8 text-white bg-customGreen group-hover:text-customGreen group-focus:ring-0 ">
+            <label for="default-radio-current" class="cursor-pointer ml-2 mr-4 text-[18px] font-medium group-hover:text-customGreen text-white leading-[2rem]">
+              {{ section.settings.menu.links[0].title }}
+            </label>
+          </div>
+
+          <!-- Show this when screen is smaller -->
+          <div class="md:hidden" id="default-radio-current">
+            <img src="{{ 'menu.svg' | asset_url }}" alt="Menu" class="w-20 h-20" loading="lazy" width="80" height="80" />
+          </div>
+
+        </button>
+
+        <!-- Full-screen background overlay with blur effect -->
+        <div id="dropdownOverlay" class="fixed inset-0 bg-[#D9D9D9] bg-opacity-10 backdrop-blur-sm hidden z-10" style="backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);"></div>
+
+        <!-- Dropdown menu (aligned below the button with dynamic width) -->
+        <div id="dropdownDefaultRadio" class="absolute right-0 z-50 bg-black rounded-[10px] shadow-lg p-8 hidden mt-[2.5rem]" style="min-width: 320px; max-width: 500px;">
+          <div class="flex justify-end mb-2">
+            <button id="closeDropdownButton">
+              <img src="{{ 'close_small.svg' | asset_url }}" alt="Close" class="text-customGreen" width="36" height="36">
+            </button>
+          </div>
+
+          <!-- Dynamic Menu Options from Liquid -->
+          <ul class="space-y-6 text-white">
+            {%- for link in section.settings.menu.links -%}
+              <li class="cursor-pointer">
+                <a href="{{ link.url }}" class="block text-4xl font-bold text-white hover:text-customGreen">
+                  {{ link.title }}
+                </a>
+              </li>
+            {%- endfor -%}
+
+            {%liquid
+              assign loginTitle = 'customer.account_fallback' | t | upcase
+              if customer
+                assign loginTitle = 'customer.login_page.title' | t | upcase
+              endif
+            %}
+
+            <!-- Login Link -->
+            <li class="cursor-pointer">
+              <a href="{{ routes.account_login_url }}" class="block text-4xl font-bold text-white hover:text-customGreen">
+                {{ loginTitle }}
               </a>
             </li>
-          {%- endfor -%}
-          {%liquid
-            assign loginTitle = 'customer.account_fallback' | t | upcase
-            if customer
-              assign loginTitle = 'customer.login_page.title' | t | upcase
-            endif
-           %}
-          <li class="cursor-pointer bg-black group">
-            <a href="{{ routes.account_login_url }}" class="w-full block group-hover:text-customGreen">
-              <div style="top: -1px" class="inline-block w-4 h-4 border-2 border-white rounded-full relative">
-                <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300 {% if routes.account_login_url %}bg-notice{% endif %} group-hover:bg-customGreen group-focus:ring-0"></span>
-              </div>
-              <label for="default-radio-{{ routes.account_login_url }}" class="cursor-pointer ml-1 text-md font-medium group-hover:text-customGreen text-white">{{ loginTitle }}</label>
-            </a>
-          </li>
-
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
-</{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %}>
+{%- if section.settings.enable_sticky_header -%}
+  </sticky-header>
+{%- else -%}
+  </div>
+{%- endif -%}
 
+<!-- JavaScript for Dropdown and Overlay Management -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownButton = document.getElementById('dropdownRadioButton');
+    const dropdownMenu = document.getElementById('dropdownDefaultRadio');
+    const dropdownOverlay = document.getElementById('dropdownOverlay');
+    const closeDropdownButton = document.getElementById('closeDropdownButton');
+  
+    // Function to toggle the dropdown menu visibility
+    function toggleDropdown() {
+      const isMenuVisible = !dropdownMenu.classList.contains('hidden');
+  
+      if (isMenuVisible) {
+        // If the menu is visible, hide it
+        dropdownMenu.classList.add('hidden');
+        dropdownOverlay.classList.add('hidden');
+      } else {
+        // If the menu is hidden, show it
+        dropdownMenu.classList.remove('hidden');
+        dropdownOverlay.classList.remove('hidden');
+      }
+    }
+  
+    // Event listener for toggling the dropdown menu
+    dropdownButton.addEventListener('click', toggleDropdown);
+  
+    // Close the dropdown when clicking the close button or overlay
+    closeDropdownButton.addEventListener('click', function() {
+      dropdownMenu.classList.add('hidden');
+      dropdownOverlay.classList.add('hidden');
+    });
+    dropdownOverlay.addEventListener('click', function() {
+      dropdownMenu.classList.add('hidden');
+      dropdownOverlay.classList.add('hidden');
+    });
+  });  
+</script>
+
+<!-- JSON-LD Schema for SEO -->
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -87,27 +198,9 @@
   }
 </script>
 
-{%- if request.page_type == 'index' -%}
-  {% assign potential_action_target = request.origin | append: routes.search_url | append: "?q={search_term_string}" %}
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{ shop.name | json }},
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{ potential_action_target | json }},
-        "query-input": "required name=search_term_string"
-      },
-      "url": {{ request.origin | append: page.url | json }}
-    }
-  </script>
-{%- endif -%}
-
 {% schema %}
 {
   "name": "Header",
-  "class": "z-10",
   "settings": [
     {
       "type": "link_list",

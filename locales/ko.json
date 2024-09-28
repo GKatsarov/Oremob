@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "귀하의 비밀번호",
       "login_form_error": "잘못된 비밀번호입니다!",
       "login_form_submit": "입력",
-      "admin_link_html": "스토어 소유자입니까? <a href=\"/admin\" class=\"link underlined-link\">여기에서 로그인</a>",
+      "admin_link_html": "스토어 소유자입니까? <a href=\"/admin\" class=\"link underlined-link\"><u>여기에서 로그인</u></a>",
       "powered_by_shopify_html": "이 상점은 {{ shopify }}에서 제공합니다."
     },
     "social": {
@@ -156,7 +156,7 @@
       },
       "view_full_details": "전체 세부 정보 보기",
       "include_taxes": "세금이 포함됩니다.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">배송료</a>는 결제 시 계산됩니다.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>배송료</u></a>는 결제 시 계산됩니다.",
       "choose_options": "옵션 선택하기",
       "choose_product_options": "{{ product_name }}의 옵션 선택",
       "value_unavailable": "{{ option_value }} - 사용할 수 없음",
@@ -278,9 +278,9 @@
       "empty": "카트가 비어 있습니다",
       "cart_error": "카트를 업데이트하는 중 오류가 발생했습니다. 다시 시도하십시오.",
       "cart_quantity_error_html": "카트에는 이 품목을 {{ quantity }}개만 추가할 수 있습니다.",
-      "taxes_and_shipping_policy_at_checkout_html": "결제 시 세금, 할인 및 <a href=\"{{ link }}\">배송료</a> 계산됨",
+      "taxes_and_shipping_policy_at_checkout_html": "결제 시 세금, 할인 및 <a href=\"{{ link }}\"><u>배송료</u></a> 계산됨",
       "taxes_included_but_shipping_at_checkout": "세금 포함 및 결제 시 배송료 계산됨",
-      "taxes_included_and_shipping_policy_html": "세금이 포함된 가격입니다. <a href=\"{{ link }}\">배송료</a> 및 할인은 결제 시 계산됩니다.",
+      "taxes_included_and_shipping_policy_html": "세금이 포함된 가격입니다. <a href=\"{{ link }}\"><u>배송료</u></a> 및 할인은 결제 시 계산됩니다.",
       "taxes_and_shipping_at_checkout": "결제 시 세금, 할인 및 배송료 계산됨",
       "headings": {
         "product": "제품",
@@ -292,7 +292,7 @@
       "update": "업데이트",
       "login": {
         "title": "계정이 있습니까?",
-        "paragraph_html": "더 빠르게 결제하려면 <a href=\"{{ link }}\" class=\"link underlined-link\">로그인</a>하십시오."
+        "paragraph_html": "더 빠르게 결제하려면 <a href=\"{{ link }}\" class=\"link underlined-link\"><u>로그인</u></a>하십시오."
       },
       "estimated_total": "예상 총액",
       "new_estimated_total": "새로운 예상 총액"
@@ -315,7 +315,7 @@
     "collection_template": {
       "title": "컬렉션",
       "empty": "제품을 찾을 수 없음",
-      "use_fewer_filters_html": "더 적은 수의 필터를 사용하거나 <a class=\"{{ class }}\" href=\"{{ link }}\">모두 제거하기</a>"
+      "use_fewer_filters_html": "더 적은 수의 필터를 사용하거나 <a class=\"{{ class }}\" href=\"{{ link }}\"><u>모두 제거하기</u></a>"
     },
     "video": {
       "load_video": "동영상 로드: {{ description }}"

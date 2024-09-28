@@ -211,8 +211,10 @@ quick-add-modal .product-form__buttons {
 
 .quick-add__submit {
   padding: 0.8rem;
+  font-size: 1.4rem;
   min-width: 100%;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 
 quick-add-modal .product-media-container.constrain-height {

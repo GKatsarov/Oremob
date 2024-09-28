@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "Passordet ditt",
       "login_form_error": "Feil passord!",
       "login_form_submit": "Gå inn",
-      "admin_link_html": "Er du butikkeieren? <a href=\"/admin\" class=\"link underlined-link\">Logg inn her</a>",
+      "admin_link_html": "Er du butikkeieren? <a href=\"/admin\" class=\"link underlined-link\"><u>Logg inn her</u></a>",
       "powered_by_shopify_html": "Denne butikken vil bli drevet av {{ shopify }}"
     },
     "social": {
@@ -155,7 +155,7 @@
       },
       "view_full_details": "Vis alle detaljer",
       "include_taxes": "Avgift inkludert.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beregnes ved kassen.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>Frakt</u></a> beregnes ved kassen.",
       "choose_options": "Velg alternativer",
       "choose_product_options": "Velg alternativer for {{ product_name }}",
       "value_unavailable": "{{ option_value }} – utilgjengelig",
@@ -278,9 +278,9 @@
       "empty": "Handlekurven din er tom",
       "cart_error": "Det oppstod en feil under oppdateringen av handlekurven din. Prøv på nytt.",
       "cart_quantity_error_html": "Du kan bare legge {{ quantity }} av denne varen i handlekurven.",
-      "taxes_and_shipping_policy_at_checkout_html": "Avgifter, rabatter og <a href=\"{{ link }}\">frakt</a> beregnes i kassen",
+      "taxes_and_shipping_policy_at_checkout_html": "Avgifter, rabatter og <a href=\"{{ link }}\"><u>frakt</u></a> beregnes i kassen",
       "taxes_included_but_shipping_at_checkout": "Inkluderte avgifter, frakt og rabatter beregnes i kassen",
-      "taxes_included_and_shipping_policy_html": "Inkluderte avgifter. <a href=\"{{ link }}\">Frakt</a> og rabatter beregnes i kassen.",
+      "taxes_included_and_shipping_policy_html": "Inkluderte avgifter. <a href=\"{{ link }}\"><u>Frakt</u></a> og rabatter beregnes i kassen.",
       "taxes_and_shipping_at_checkout": "Avgifter, rabatter og frakt beregnes i kassen",
       "headings": {
         "product": "Produkt",
@@ -292,7 +292,7 @@
       "update": "Oppdater",
       "login": {
         "title": "Har du en konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logg på</a> for å betale raskere."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\"><u>Logg på</u></a> for å betale raskere."
       },
       "estimated_total": "Estimert totalsum",
       "new_estimated_total": "Ny estimert totalsum"
@@ -315,7 +315,7 @@
     "collection_template": {
       "title": "Samling",
       "empty": "Ingen produkter funnet",
-      "use_fewer_filters_html": "Bruk færre filtre eller <a class=\"{{ class }}\" href=\"{{ link }}\">fjern alle</a>"
+      "use_fewer_filters_html": "Bruk færre filtre eller <a class=\"{{ class }}\" href=\"{{ link }}\"><u>fjern alle</u></a>"
     },
     "video": {
       "load_video": "Last inn video: {{ description }}"

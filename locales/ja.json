@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "あなたのパスワード",
       "login_form_error": "パスワードが正しくありません。",
       "login_form_submit": "ストアに入る",
-      "admin_link_html": "あなたはストアオーナーですか？<a href=\"/admin\" class=\"link underlined-link\">こちらからログインする</a>",
+      "admin_link_html": "あなたはストアオーナーですか？<a href=\"/admin\" class=\"link underlined-link\"><u>こちらからログインする</u></a>",
       "powered_by_shopify_html": "このショップでは{{ shopify }}を使用する予定です"
     },
     "social": {
@@ -156,7 +156,7 @@
       },
       "view_full_details": "詳細を表示する",
       "include_taxes": "税込",
-      "shipping_policy_html": "<a href=\"{{ link }}\">配送料</a>はチェックアウト時に計算されます。",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>配送料</u></a>はチェックアウト時に計算されます。",
       "choose_options": "オプションを選択",
       "choose_product_options": "{{ product_name }}のオプションを選択する",
       "value_unavailable": "{{ option_value }}は利用できません",
@@ -278,9 +278,9 @@
       "empty": "カートは空です",
       "cart_error": "カートをアップデートするときにエラーが発生しました。もう一度お試しください。",
       "cart_quantity_error_html": "このアイテムは{{ quantity }}個しかカートに追加することができません。",
-      "taxes_and_shipping_policy_at_checkout_html": "税、ディスカウント、および<a href=\"{{ link }}\">配送料</a>はチエックアウト時に計算されます",
+      "taxes_and_shipping_policy_at_checkout_html": "税、ディスカウント、および<a href=\"{{ link }}\"><u>配送料</u></a>はチエックアウト時に計算されます",
       "taxes_included_but_shipping_at_checkout": "税込みで、配送料とディスカウントはチェックアアウト時に計算されます",
-      "taxes_included_and_shipping_policy_html": "税込。<a href=\"{{ link }}\">配送料</a>とディスカウントはチエックアウト時に計算されます",
+      "taxes_included_and_shipping_policy_html": "税込。<a href=\"{{ link }}\"><u>配送料</u></a>とディスカウントはチエックアウト時に計算されます",
       "taxes_and_shipping_at_checkout": "税、ディスカウント、および配送料はチエックアウト時に計算されます",
       "headings": {
         "product": "商品",
@@ -292,7 +292,7 @@
       "update": "アップデート",
       "login": {
         "title": "アカウントをお持ちですか?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">ログイン</a>することで、チェックアウトがスピーディーに行えます。"
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\"><u>ログイン</u></a>することで、チェックアウトがスピーディーに行えます。"
       },
       "estimated_total": "見積もり合計",
       "new_estimated_total": "新たな推定総額"
@@ -315,7 +315,7 @@
     "collection_template": {
       "title": "コレクション",
       "empty": "商品が見つかりません",
-      "use_fewer_filters_html": "絞り込みの数を減らす、または<a class=\"{{ class }}\" href=\"{{ link }}\">すべて削除する</a>"
+      "use_fewer_filters_html": "絞り込みの数を減らす、または<a class=\"{{ class }}\" href=\"{{ link }}\"><u>すべて削除する</u></a>"
     },
     "video": {
       "load_video": "動画を読み込む: {{ description }}"

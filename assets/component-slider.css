@@ -226,6 +226,22 @@ slider-component.slider-component-full-width {
   }
 }
 
+.icon-circle {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.icon-caret svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
 /* Scrollbar */
 
 .slider {

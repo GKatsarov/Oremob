@@ -25,7 +25,7 @@
   endif
 -%}
 
-<div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+<div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} z-40">
   {%- if filter_type == 'vertical' or filter_type == 'horizontal' -%}
     <facet-filters-form class="facets small-hide">
       <form
@@ -111,20 +111,17 @@
                 {% when 'boolean', 'list' %}
                   <details
                     id="Details-{{ forloop.index }}-{{ section.id }}"
-                    class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
+                    class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter details-right z-40"
                     data-index="{{ forloop.index }}"
                     {% if filter_type == 'vertical' and forloop.index == 1 %}
                       open
                     {% endif %}
                   >
                     <summary
-                      class="facets__summary caption-large focus-offset"
+                      class="z-40 summary-toggle px-6 py-2 bg-[#C3C3C3] rounded-xl text-black uppercase text-[2.25rem] flex justify-center items-center"
                       aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
                     >
                       <div>
-                        <div style="top:-2px;" class="inline-block w-4 h-4 border-2 rounded-full border-black relative mr-2">
-                          <span class="block w-full h-full rounded-full bg-transparent transition-background ease-in-out duration-300"></span>
-                        </div>
                         <span>
                           {{- filter.label | escape | upcase }}
                           {%- if filter_type == 'vertical' -%}
@@ -135,10 +132,17 @@
                         </span>
                       </div>
                     </summary>
+                    
                     <div
                       id="Facet-{{ forloop.index }}-{{ section.id }}"
-                      class="parent-display {% if filter_type == 'horizontal' %}facets__display{% else %}facets__display-vertical{% endif %}"
+                      class="absolute right-0 z-40 bg-black rounded-[10px] shadow-lg p-8 mt-[2.5rem]" style="min-width: 320px; max-width: 500px;"
                     >
+                      <div class="flex justify-end mb-2">
+                        <button id="closeDropdownFilterButton">
+                          <img src="{{ 'close_small.svg' | asset_url }}" alt="Close" class="text-customGreen" width="36" height="36">
+                        </button>
+                      </div>
+
                       <fieldset class="facets-wrap parent-wrap {% if filter_type == 'vertical' %} facets-wrap-vertical{% endif %}">
                         <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                         <ul
@@ -165,25 +169,8 @@
                                   {% endif %}
                                 >
 
-                                <svg
-                                  width="1.6rem"
-                                  height="1.9rem"
-                                  viewBox="0 0 16 16"
-                                  aria-hidden="true"
-                                  focusable="false">
-                                  <circle cx="8" cy="8" r="7" {%- if value.active -%}stroke="#BEFF3D" fill="#BEFF3D"{% else %}fill="none" stroke="black"{%- endif -%} stroke-width="1"></circle>
-                                </svg>
-
-                                <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
-                                <span class="visually-hidden">
-                                  {{- value.label | escape }} (
-                                  {%- if value.count == 1 -%}
-                                    {{- 'products.facets.product_count_simple.one' | t: count: value.count -}}
-                                  {%- else -%}
-                                    {{- 'products.facets.product_count_simple.other' | t: count: value.count -}}
-                                  {%- endif -%}
-                                  )</span
-                                >
+                                  <span class="uppercase text-[2rem] text-white" aria-hidden="true">{{ value.label | escape }}</span>
+ 
                               </label>
                             </li>
                           {%- endfor -%}
@@ -212,16 +199,6 @@
                                     disabled
                                   {% endif %}
                                 >
-
-                                <svg
-                                  width="1.6rem"
-                                  height="1.9rem"
-                                  viewBox="0 0 16 16"
-                                  aria-hidden="true"
-                                  focusable="false">
-                                  <circle cx="8" cy="8" r="7" {%- if value.active -%}stroke="#BEFF3D" fill="#BEFF3D"{% else %}fill="none" stroke="black"{%- endif -%} stroke-width="1"></circle>
-                                </svg>
-
 
                                 <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
                                 <span class="visually-hidden">
@@ -1057,3 +1034,31 @@
     </facet-filters-form>
   {%- endif -%}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const openDropdownButton = document.getElementById('openDropdownFilterButton');
+    const closeDropdownButton = document.getElementById('closeDropdownFilterButton');
+    const dropdownMenu = document.getElementById('dropdownFilterDefaultRadio');
+    const dropdownOverlay = document.getElementById('dropdownOverlay');
+  
+    // Function to open the dropdown
+    function openDropdown() {
+      dropdownMenu.classList.remove('hidden');
+      dropdownOverlay.classList.remove('hidden');
+    }
+  
+    // Function to close the dropdown
+    function closeDropdown() {
+      dropdownMenu.classList.add('hidden');
+      dropdownOverlay.classList.add('hidden');
+    }
+  
+    // Event listener to open the dropdown
+    openDropdownButton.addEventListener('click', openDropdown);
+  
+    // Event listener to close the dropdown
+    closeDropdownButton.addEventListener('click', closeDropdown);
+    dropdownOverlay.addEventListener('click', closeDropdown);
+  });
+</script>

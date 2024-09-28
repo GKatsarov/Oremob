@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "Parola dvs.",
       "login_form_error": "Parolă incorectă!",
       "login_form_submit": "Accesați",
-      "admin_link_html": "Sunteți proprietarul magazinului? <a href=\"/admin\" class=\"link underlined-link\">Conectați-vă aici</a>",
+      "admin_link_html": "Sunteți proprietarul magazinului? <a href=\"/admin\" class=\"link underlined-link\"><u>Conectați-vă aici</u></a>",
       "powered_by_shopify_html": "Acest magazin va fi pe platforma {{ shopify }}"
     },
     "social": {
@@ -157,7 +157,7 @@
       },
       "view_full_details": "Vedeți detaliile complete",
       "include_taxes": "Taxe incluse.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Taxele de expediere</a> sunt calculate la finalizarea comenzii.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>Taxele de expediere</u></a> sunt calculate la finalizarea comenzii.",
       "choose_options": "Alege opțiunile",
       "choose_product_options": "Alege opțiunile pentru {{ product_name }}",
       "value_unavailable": "{{ option_value }} – Indisponibil",
@@ -288,9 +288,9 @@
       "empty": "Coșul dvs. este gol",
       "cart_error": "A apărut o eroare în timpul actualizării coșului. Încercați din nou.",
       "cart_quantity_error_html": "Cantitatea maximă pe care o poți adăuga în coș din acest articol: {{ quantity }}.",
-      "taxes_and_shipping_policy_at_checkout_html": "Taxele, reducerile și <a href=\"{{ link }}\">transportul</a> sunt calculate la finalizarea comenzii",
+      "taxes_and_shipping_policy_at_checkout_html": "Taxele, reducerile și <a href=\"{{ link }}\"><u>transportul</u></a> sunt calculate la finalizarea comenzii",
       "taxes_included_but_shipping_at_checkout": "Taxele sunt incluse, iar transportul și reducerile sunt calculate la finalizarea comenzii",
-      "taxes_included_and_shipping_policy_html": "Taxele sunt incluse. <a href=\"{{ link }}\">Transportul</a> și reducerile sunt calculate la finalizarea comenzii.",
+      "taxes_included_and_shipping_policy_html": "Taxele sunt incluse. <a href=\"{{ link }}\"><u>Transportul</u></a> și reducerile sunt calculate la finalizarea comenzii.",
       "taxes_and_shipping_at_checkout": "Taxele, reducerile și transportul sunt calculate la finalizarea comenzii",
       "update": "Actualizați",
       "headings": {
@@ -302,7 +302,7 @@
       },
       "login": {
         "title": "Ai un cont?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Conectează-te</a> pentru a finaliza comanda mai rapid."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\"><u>Conectează-te</u></a> pentru a finaliza comanda mai rapid."
       },
       "estimated_total": "Total estimat",
       "new_estimated_total": "Noul total estimat"
@@ -325,7 +325,7 @@
     "collection_template": {
       "title": "Colecție",
       "empty": "Nu s-au găsit produse",
-      "use_fewer_filters_html": "Folosește mai puține filtre sau <a class=\"{{ class }}\" href=\"{{ link }}\">elimină-le pe toate</a>"
+      "use_fewer_filters_html": "Folosește mai puține filtre sau <a class=\"{{ class }}\" href=\"{{ link }}\"><u>elimină-le pe toate</u></a>"
     },
     "video": {
       "load_video": "Încarcă clipul video: {{ description }}"

@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "Ditt lösenord",
       "login_form_error": "Fel lösenord!",
       "login_form_submit": "Ange",
-      "admin_link_html": "Är du butiksägare? <a href=\"/admin\" class=\"link underlined-link\">Logga in här</a>",
+      "admin_link_html": "Är du butiksägare? <a href=\"/admin\" class=\"link underlined-link\"><u>Logga in här</u></a>",
       "powered_by_shopify_html": "Denna butik kommer drivas av {{ shopify }}"
     },
     "social": {
@@ -155,7 +155,7 @@
       },
       "view_full_details": "Visa alla uppgifter",
       "include_taxes": "Skatt ingår.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Frakt</a> beräknas i kassan.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>Frakt</u></a> beräknas i kassan.",
       "choose_options": "Välj alternativ",
       "choose_product_options": "Välj alternativ för {{ product_name }}",
       "value_unavailable": "{{ option_value }} – inte tillgängligt",
@@ -278,9 +278,9 @@
       "empty": "Din varukorg är tom",
       "cart_error": "Ett fel uppstod när du uppdaterade din varukorg. Försök igen.",
       "cart_quantity_error_html": "Du kan endast lägga till {{ quantity }} av denna artikel i din varukorg.",
-      "taxes_and_shipping_policy_at_checkout_html": "Skatter, rabatter och <a href=\"{{ link }}\">leverans</a> beräknas i kassan",
+      "taxes_and_shipping_policy_at_checkout_html": "Skatter, rabatter och <a href=\"{{ link }}\"><u>leverans</u></a> beräknas i kassan",
       "taxes_included_but_shipping_at_checkout": "Skatt ingår och leverans och rabatter beräknas i kassan",
-      "taxes_included_and_shipping_policy_html": "Skatt ingår. <a href=\"{{ link }}\">Leverans</a> och rabatter beräknas i kassan.",
+      "taxes_included_and_shipping_policy_html": "Skatt ingår. <a href=\"{{ link }}\"><u>Leverans</u></a> och rabatter beräknas i kassan.",
       "taxes_and_shipping_at_checkout": "Skatter, rabatter och leverans beräknas i kassan",
       "headings": {
         "product": "Produkt",
@@ -292,7 +292,7 @@
       "update": "Uppdatera",
       "login": {
         "title": "Har du ett konto?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Logga in</a> för att gå till kassan snabbare."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\"><u>Logga in</u></a> för att gå till kassan snabbare."
       },
       "estimated_total": "Beräknad totalsumma",
       "new_estimated_total": "Nytt beräknat totalbelopp"
@@ -315,7 +315,7 @@
     "collection_template": {
       "title": "Produktserie",
       "empty": "Inga produkter hittades",
-      "use_fewer_filters_html": "Använd färre filter eller <a class=\"{{ class }}\" href=\"{{ link }}\">ta bort alla</a>"
+      "use_fewer_filters_html": "Använd färre filter eller <a class=\"{{ class }}\" href=\"{{ link }}\"><u>ta bort alla</u></a>"
     },
     "video": {
       "load_video": "Ladda video: {{ description }}"

@@ -7,7 +7,7 @@
       "login_form_password_placeholder": "Vaša lozinka",
       "login_form_error": "Pogrešna lozinka!",
       "login_form_submit": "Unesi",
-      "admin_link_html": "Jeste li vlasnik/vlasnica trgovine? <a href=\"/admin\" class=\"link underlined-link\">Prijavite se ovdje</a>",
+      "admin_link_html": "Jeste li vlasnik/vlasnica trgovine? <a href=\"/admin\" class=\"link underlined-link\"><u>Prijavite se ovdje</u></a>",
       "powered_by_shopify_html": "Ovu trgovinu pokreće {{ shopify }}"
     },
     "social": {
@@ -157,7 +157,7 @@
       },
       "view_full_details": "Prikaži sve pojedinosti",
       "include_taxes": "Porez je uključen.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Poštarina </a> se obračunava prilikom završetka kupnje.",
+      "shipping_policy_html": "<a href=\"{{ link }}\"><u>Poštarina </u></a> se obračunava prilikom završetka kupnje.",
       "choose_options": "Odaberite opcije",
       "choose_product_options": "Odaberite željene opcije za {{ product_name }}",
       "value_unavailable": "{{ option_value }} – nedostupno",
@@ -288,9 +288,9 @@
       "empty": "Vaša je košarica prazna",
       "cart_error": "Došlo je do pogreške prilikom ažuriranja košarice. Pokušajte ponovno.",
       "cart_quantity_error_html": "U svoju košaricu možete dodati {{ quantity }} kom ovog artikla.",
-      "taxes_and_shipping_policy_at_checkout_html": "Porezi, popusti i <a href=\"{{ link }}\">poštarina</a> obračunavaju se prilikom plaćanja",
+      "taxes_and_shipping_policy_at_checkout_html": "Porezi, popusti i <a href=\"{{ link }}\"><u>poštarina</u></a> obračunavaju se prilikom plaćanja",
       "taxes_included_but_shipping_at_checkout": "Porez je uključen u cijenu, a poštarina i popusti obračunavaju se prilikom plaćanja",
-      "taxes_included_and_shipping_policy_html": "Porez je uključen. <a href=\"{{ link }}\">Poštarina</a> i popusti obračunavaju se prilikom plaćanja.",
+      "taxes_included_and_shipping_policy_html": "Porez je uključen. <a href=\"{{ link }}\"><u>Poštarina</u></a> i popusti obračunavaju se prilikom plaćanja.",
       "taxes_and_shipping_at_checkout": "Porezi, popusti i poštarina obračunavaju se prilikom plaćanja",
       "update": "Ažuriraj",
       "headings": {
@@ -302,7 +302,7 @@
       },
       "login": {
         "title": "Imate li račun?",
-        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\">Prijavite se</a> za bržu provjeru."
+        "paragraph_html": "<a href=\"{{ link }}\" class=\"link underlined-link\"><u>Prijavite se</u></a> za bržu provjeru."
       },
       "estimated_total": "Procijenjen ukupni iznos",
       "new_estimated_total": "Novi procijenjeni ukupni iznos"
@@ -325,7 +325,7 @@
     "collection_template": {
       "title": "Kolekcija",
       "empty": "Nije pronađen nijedan proizvod",
-      "use_fewer_filters_html": "Upotrijebi manje filtara ili <a class=\"{{ class }}\" href=\"{{ link }}\">ukloni sve</a>"
+      "use_fewer_filters_html": "Upotrijebi manje filtara ili <a class=\"{{ class }}\" href=\"{{ link }}\"><u>ukloni sve</u></a>"
     },
     "video": {
       "load_video": "Učitaj videozapis: {{ description }}"

@@ -137,7 +137,6 @@
 .card__content {
   display: grid;
   grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
-  padding: 1rem;
   width: 100%;
   flex-grow: 1;
 }
@@ -147,8 +146,8 @@
 }
 
 .card__information {
-  grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  grid-row-start: 1;
+  padding: 1rem 0;
 }
 
 .card:not(.ratio) > .card__content {

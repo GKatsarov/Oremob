@@ -23,10 +23,147 @@
     >
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
-          <legend class="form__label">{{ option.name }}</legend>
+          <legend class="form__label uppercase">
+            {%- if option.name == 'Medium' -%}
+              Size
+            {%- else -%}
+              {{ option.name }}
+            {%- endif -%}
+          </legend>
           {% render 'product-variant-options', product: product, option: option, block: block %}
         </fieldset>
       {%- endfor -%}
+
+      <!-- Find Your Perfect Size text -->
+      <div class="pb-[2rem]">
+        <a href="#" id="open-size-popup" class="underline text-black cursor-pointer" style="font-family:NeueHaasDisplay-Black,serif;">
+          Find Your Perfect Size
+        </a>
+      </div>
+
+      <div id="size-popup" class="size-popup fixed inset-0 bg-[#D9D9D9] bg-opacity-10 backdrop-blur-sm items-center justify-center hidden z-50">
+        <!-- Popup Content -->
+        <div class="popup-content relative bg-black p-8 rounded-lg text-center text-white" style="width: 80rem; max-width: 100%;">
+          
+          <div class="absolute top-4 right-4">
+            <button id="close-size-popup">
+              <img src="{{ 'close_small.svg' | asset_url }}" alt="Close" class="text-customGreen" width="36" height="36">
+            </button>
+          </div>
+      
+          <div class="p-[7rem]">
+            <h2 class="text-[#9D9D9D] text-[1.5rem] font-bold mb-2">OREMOB OFFICIAL SIZE CHART</h2>
+            <h3 class="text-white text-[2.25rem] font-extrabold mb-4">FIND YOUR PERFECT SIZE</h3>
+        
+            <div class="flex justify-end space-x-4 mb-4 mt-[2.5rem]">
+              <span id="cm-btn" class="text-white font-bold cursor-pointer">CM</span>
+              <span class="text-white font-bold">|</span>
+              <span id="inches-btn" class="text-[#C3C3C3] font-bold cursor-pointer">INCHES</span>
+            </div>
+            
+            <!-- Table with Full Borders -->
+            <table id="size-chart" class="table-auto w-full text-white text-lg mb-4 border-collapse">
+              <thead>
+                <tr>
+                  <th class="border border-white p-2 text-center text-[1.25rem]">Size</th>
+                  <th class="border border-white p-2 text-center text-[1.25rem]">Front<br>Length</th>
+                  <th class="border border-white p-2 text-center text-[1.25rem]">Back<br>Length</th>
+                  <th class="border border-white p-2 text-center text-[1.25rem]">1/2 Chest<br>Width</th>
+                </tr>
+              </thead>
+              <tbody class="text-[1.5rem]" style="font-family: NeueHaasDisplay-Black, serif;">
+                <tr>
+                  <td class="border border-white p-2">S</td>
+                  <td class="border border-white p-2" data-cm="72.0" data-inches="28.3">72.0</td>
+                  <td class="border border-white p-2" data-cm="72.5" data-inches="28.5">72.5</td>
+                  <td class="border border-white p-2" data-cm="63.0" data-inches="24.8">63.0</td>
+                </tr>
+                <tr>
+                  <td class="border border-white p-2">M</td>
+                  <td class="border border-white p-2" data-cm="74.0" data-inches="29.1">74.0</td>
+                  <td class="border border-white p-2" data-cm="74.5" data-inches="29.3">74.5</td>
+                  <td class="border border-white p-2" data-cm="64.5" data-inches="25.4">64.5</td>
+                </tr>
+                <tr>
+                  <td class="border border-white p-2">L</td>
+                  <td class="border border-white p-2" data-cm="76.0" data-inches="29.9">76.0</td>
+                  <td class="border border-white p-2" data-cm="76.5" data-inches="30.1">76.5</td>
+                  <td class="border border-white p-2" data-cm="66.0" data-inches="26.0">66.0</td>
+                </tr>
+                <tr>
+                  <td class="border border-white p-2">XL</td>
+                  <td class="border border-white p-2" data-cm="78.5" data-inches="30.9">78.5</td>
+                  <td class="border border-white p-2" data-cm="79.0" data-inches="31.1">79.0</td>
+                  <td class="border border-white p-2" data-cm="68.0" data-inches="26.8">68.0</td>
+                </tr>
+                <tr>
+                  <td class="border border-white p-2">XXL</td>
+                  <td class="border border-white p-2" data-cm="80.0" data-inches="31.5">80.0</td>
+                  <td class="border border-white p-2" data-cm="81.0" data-inches="31.9">81.0</td>
+                  <td class="border border-white p-2" data-cm="70.0" data-inches="27.6">70.0</td>
+                </tr>
+              </tbody>
+            </table>            
+        
+            <ul class="list-disc text-left mt-[4rem] ml-4 text-[1.5rem] leading-relaxed" style="font-family:NeueHaasDisplay-Black,serif;">
+              <li><b>Front Length:</b> The distance from the highest point of the shoulder to the bottom hem on the front of the garment; indicates how long the garment will appear from the front.</li>
+              <li><b>Back Length:</b> The measurement from the highest point of the shoulder to the bottom hem on the back; often slightly longer than the front for added coverage.</li>
+              <li><b>1/2 Chest Width:</b> The measurement across the chest from one armpit to the other; represents half of the total chest circumference, giving an idea of how the garment fits around the torso.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.getElementById('open-size-popup').addEventListener('click', function(event) {
+          event.preventDefault();
+          var popup = document.getElementById('size-popup');
+          popup.classList.remove('hidden');
+          popup.style.display = 'flex';
+        });
+      
+        document.getElementById('close-size-popup').addEventListener('click', function() {
+          var popup = document.getElementById('size-popup');
+          popup.classList.add('hidden');
+          popup.style.display = 'none';
+        });
+      </script>
+
+      <script>
+        const cmBtn = document.getElementById('cm-btn');
+        const inchesBtn = document.getElementById('inches-btn');
+        const sizeChart = document.getElementById('size-chart');
+      
+        // Function to update table values
+        function updateTable(unit) {
+          const cells = sizeChart.querySelectorAll('td[data-cm]');
+          cells.forEach(cell => {
+            cell.textContent = unit === 'cm' ? cell.getAttribute('data-cm') : cell.getAttribute('data-inches');
+          });
+        }
+      
+        // Click event for CM
+        cmBtn.addEventListener('click', () => {
+          cmBtn.classList.add('text-white');
+          cmBtn.classList.remove('text-[#C3C3C3]');
+          inchesBtn.classList.add('text-[#C3C3C3]');
+          inchesBtn.classList.remove('text-white');
+          updateTable('cm');
+        });
+      
+        // Click event for INCHES
+        inchesBtn.addEventListener('click', () => {
+          inchesBtn.classList.add('text-white');
+          inchesBtn.classList.remove('text-[#C3C3C3]');
+          cmBtn.classList.add('text-[#C3C3C3]');
+          cmBtn.classList.remove('text-white');
+          updateTable('inches');
+        });
+      
+        // Default to CM
+        updateTable('cm');
+      </script>
+        
       <script type="application/json">
         {{ product.variants | json }}
       </script>
@@ -60,10 +197,6 @@
           </div>
         </div>
       {%- endfor -%}
-
-      <script type="application/json">
-        {{ product.variants | json }}
-      </script>
     </variant-selects>
   {%- endif -%}
 {%- endunless -%}
@@ -96,22 +229,6 @@
               if variant.available == false
                 echo 'products.product.sold_out' | t | prepend: ' - '
               endif
-              if variant.quantity_rule.increment > 1
-                echo 'products.product.quantity.multiples_of' | t: quantity: variant.quantity_rule.increment | prepend: ' - '
-              endif
-              if variant.quantity_rule.min > 1
-                echo 'products.product.quantity.minimum_of' | t: quantity: variant.quantity_rule.min | prepend: ' - '
-              endif
-              if variant.quantity_rule.max != null
-                echo 'products.product.quantity.maximum_of' | t: quantity: variant.quantity_rule.max | prepend: ' - '
-              endif
-              # TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter
-              # theme-check-disable
-              assign cart_quantity = cart | item_count_for_variant: variant.id
-              # theme-check-enable
-              if cart_quantity > 0
-                echo 'products.product.quantity.in_cart_html' | t: quantity: cart_quantity | prepend: ' - '
-              endif
             -%}
           </option>
         {%- endfor -%}
@@ -120,3 +237,35 @@
     </div>
   </div>
 </noscript>
+
+<style>
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 1rem;
+    text-align: center;
+    border: 0.1rem solid white;
+  }
+
+  @media (max-width: 768px) {
+    th, td {
+      padding: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    th, td {
+      padding: 0.5rem;
+    }
+    th {
+      white-space: nowrap;
+    }
+  }
+</style>

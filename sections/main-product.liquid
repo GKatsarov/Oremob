@@ -82,7 +82,7 @@
               {% render block %}
             {%- when 'text' -%}
               <p
-                class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                class="product__text mt-[1.5rem] lg:mt-[0rem] inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {{- block.settings.text -}}
@@ -110,7 +110,7 @@
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
-                <div class="product__tax caption rte">
+                <div class="product__tax caption rte text-[1.5rem] pb-[1.25rem]" style="font-family:NeueHaasDisplay-Black,serif;">
                   {%- if cart.taxes_included -%}
                     {{ 'products.product.include_taxes' | t }}
                   {%- endif -%}
@@ -210,14 +210,14 @@
             {%- when 'quantity_selector' -%}
               <div
                 id="Quantity-Form-{{ section.id }}"
-                class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
+                class="product-form__input mt-[1.875rem] product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}"
                 {{ block.shopify_attributes }}
               >
                 {% comment %} TODO: enable theme-check once `item_count_for_variant` is accepted as valid filter {% endcomment %}
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                <label class="quantity__label form__label uppercase" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
                     <span class="loading-overlay hidden">
@@ -238,14 +238,14 @@
                 </label>
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
-                    <button class="quantity__button no-js-hidden" name="minus" type="button">
+                    <button class="quantity__button rounded-l-xl no-js-hidden" name="minus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.decrease' | t: product: product.title | escape -}}
                       </span>
                       {% render 'icon-minus' %}
                     </button>
                     <input
-                      class="quantity__input"
+                      class="quantity__input lg:max-w-[10rem]"
                       type="number"
                       name="quantity"
                       id="Quantity-{{ section.id }}"
@@ -260,7 +260,7 @@
                       value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                       form="{{ product_form_id }}"
                     />
-                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <button class="quantity__button rounded-r-xl no-js-hidden" name="plus" type="button">
                       <span class="visually-hidden">
                         {{- 'products.product.quantity.increase' | t: product: product.title | escape -}}
                       </span>
@@ -507,7 +507,7 @@
                         </div>
                         {%- if number_of_slides > 1 -%}
                           <div class="slider-buttons no-js-hidden">
-                            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+                            <button type="button" class="slider-button slider-button--prev bg-black " name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
                             <div class="slider-counter slider-counter--{{ block.settings.pagination_style }}{% if block.settings.pagination_style == 'counter' or block.settings.pagination_style == 'numbers' %} caption{% endif %}">
                               {%- if block.settings.pagination_style == 'counter' -%}
                                 <span class="slider-counter--current">1</span>
