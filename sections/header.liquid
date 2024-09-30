@@ -198,6 +198,11 @@
   }
 </script>
 
+<script> 
+var ss = {{ section.settings | json }};
+console.log("Header Section Loaded", ss);
+</script>
+
 {% schema %}
 {
   "name": "Header",

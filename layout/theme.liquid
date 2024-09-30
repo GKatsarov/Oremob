@@ -350,6 +350,15 @@
         recipientFormExpanded: `{{ 'recipient.form.expanded' | t }}`,
         recipientFormCollapsed: `{{ 'recipient.form.collapsed' | t }}`,
       };
+
+      window.facetData = {
+        results: {},
+        enable_filtering: false,
+        enable_sorting: false,
+        filter_type: null,
+        paginate: false,
+        showFilter: false,
+      }
     </script>
 
     {%- if settings.predictive_search_enabled -%}

@@ -28,6 +28,12 @@
 {%- endstyle -%}
 
 {% assign collection = section.settings.collection %}
+{% comment %} {% assign window.facetData.results = section.settings.collection %}
+{% assign window.facetData.enable_filtering = section.settings.enable_filtering %}
+{% assign window.facetData.enable_sorting = section.settings.enable_sorting %}
+{% assign window.facetData.filter_type = section.settings.filter_type %}
+{% assign window.facetData.paginate = paginate %}
+{% assign window.facetData.showFilter = section.settings.enable_filtering or section.settings.enable_sorting %} {% endcomment %}
 
 {%- if collection.products == blank %}
 {% assign collection = section.settings.collection %}
@@ -115,7 +121,7 @@
       {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
         <aside
                 aria-labelledby="verticalTitle"
-                class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}"
+                class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %} lg:block hidden"
                 id="main-collection-filters"
                 data-id="{{ section.id }}"
         >
@@ -188,6 +194,11 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+
+<script> 
+var ss = {{ section.settings | json }};
+console.log("mainnaaaaa1", ss);
+</script>
 
 {% schema %}
 {

@@ -27,6 +27,13 @@
   }
 {%- endstyle -%}
 
+{% comment %} {% assign window.facetData.results = section.settings.collection %}
+{% assign window.facetData.enable_filtering = section.settings.enable_filtering %}
+{% assign window.facetData.enable_sorting = section.settings.enable_sorting %}
+{% assign window.facetData.filter_type = section.settings.filter_type %}
+{% assign window.facetData.paginate = paginate %}
+{% assign window.facetData.showFilter = section.settings.enable_filtering or section.settings.enable_sorting %} {% endcomment %}
+
 <div class="section-{{ section.id }}-padding">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -121,7 +128,8 @@
             paginate: paginate
           %}
         </aside>
-      {%- endif -%}
+        
+      {%- endif -%} 
 
       <div
         class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -196,7 +204,10 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
-
+<script> 
+var ss = {{ section.settings | json }};
+console.log("mainnaaaaa", ss);
+</script>
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
